@@ -1,0 +1,30 @@
+   #DROP DATABASE creanunate;
+    CREATE DATABASE creanunate;
+
+    CREATE TABLE creanunate.customers (
+        id_customers INT AUTO_INCREMENT,
+        name varchar(100) not null,
+        surname varchar(100),
+        date_birth date,
+        email varchar(100) unique not null,
+        isRequested boolean,
+        isVisible boolean,
+        fk_id_cart int,
+        fk_id_favorites int,
+        PRIMARY KEY(id_customers)
+    );
+	INSERT INTO creanunate.customers (id_customers, name, surname, date_birth, email, isRequested, isVisible) VALUES (null, "María", "Pérez", "2003/01/28", "maria@gmail.com", 1, 1);
+	INSERT INTO creanunate.customers (id_customers, name, surname, date_birth, email, isRequested, isVisible) VALUES (null, "José", "Ramirez", "1945/07/05", "jose@gmail.com", 1, 1);
+    INSERT INTO creanunate.customers (id_customers, name, surname, date_birth, email, isRequested, isVisible) VALUES (null, "Rafael", "Hernández","1994/04/08", "rafael@gmail.com", 1, 1);
+    INSERT INTO creanunate.customers (id_customers, name, surname, date_birth, email, isRequested, isVisible) VALUES (null, "Ana", "Rodríguez", "2000/11/13", "ana@gmail.com", 1, 1);
+    
+    create table creanunate.cart(
+		id_cart INT AUTO_INCREMENT,
+        PRIMARY KEY(id_cart)
+    );
+      create table creanunate.favorites(
+		id_favorites INT AUTO_INCREMENT,
+        PRIMARY KEY(id_favorites)
+    );
+    
+    
