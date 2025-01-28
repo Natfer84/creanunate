@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "67973afbb5300b009cb5d2cd"
+  },
+  "name": "Sketching creativo en acuarela para principiantes",
+  "description": "Pinta emocionantes ilustraciones en acuarela explorando técnicas originales",
+  "price": "0.99"
+},
+{
+  "_id": {
+    "$oid": "67973d39b5300b009cb5d2ce"
+  },
+  "name": "Especialización en Técnicas de Pintura al Óleo",
+  "description": "Domina las técnicas de pintura al óleo para crear retratos expresivos, paisajes",
+  "price": "0.99"
+},
+{
+  "_id": {
+    "$oid": "67973e35b5300b009cb5d2d0"
+  },
+  "name": "Técnicas de ilustración para desbloquear tu creatividad",
+  "description": "Crea un cuaderno de artista y desarrolla tu propio universo de recursos pictóricos",
+  "price": "0.99"
+},
+{
+  "_id": {
+    "$oid": "67973e8fb5300b009cb5d2d1"
+  },
+  "name": "Sketchbook fantástico: dibuja personajes desde la imaginación",
+  "description": "Crea un hábito de dibujo para encontrar tu estilo y aprende a dar vida a criaturas",
+  "price": "0.99"
+}]
