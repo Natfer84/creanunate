@@ -16,8 +16,8 @@ export default function Inicio() {
             <ul>
                 {courses.map(course => (
                     <li key={course._id}>
-                        <h3>{course.titulo}</h3>
-                        <p>{course.descripcion}</p>
+                        <h3>{course.name}</h3>
+                        <p>{course.url}</p>
                         <a href={course.url} target="_blank" rel="noopener noreferrer">Ver Curso</a>
                     </li>
                 ))}
