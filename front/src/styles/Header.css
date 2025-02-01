@@ -1,4 +1,9 @@
+*,
+::after,
+::before{
+ box-sizing: border-box;
+}
 .Header_box{
-    width: 200px;
-    background-color:black ;
+ background-color: black;
+  
 }
