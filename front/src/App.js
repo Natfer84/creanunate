@@ -1,5 +1,6 @@
 import './styles/App.css';
 import Header from './components/header';
+import Courses from "./components/Courses";
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
 
     <div className="App">
       <Header />
+      <Courses />
     
     </div>
   
