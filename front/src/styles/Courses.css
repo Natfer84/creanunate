@@ -1,0 +1,49 @@
+.Courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  
+  .Courses__course {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .Courses__course:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .Courses__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+  }
+  
+  .Courses__image:hover {
+    transform: scale(1.1);
+  }
+  
+  .Courses__name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .Courses__code {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }

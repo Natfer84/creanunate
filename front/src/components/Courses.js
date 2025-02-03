@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
+//import Courses from "../styles/Courses.css";
 
 const Courses = () => {
 
   const [courses, setCourses] = useState([]);
 
-
-
-
-
       const fetchCourses = async () => {
           try {
-              const response = await fetch('http:///creanunate/courses/all-courses');
+              const response = await fetch('http://creanunate/courses/all-courses');
               if (response.ok) {
                   const data = await response.json();
 
