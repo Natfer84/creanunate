@@ -1,7 +1,8 @@
 
 import mongo from '../database/mongoConnection.js'
 
-const client = await mongo.connectToMongo()
+
+//const client = await mongo.connectToMongo()
 // const close = await mongo.closeClient()
 
 const mydb = 'creanunate'
