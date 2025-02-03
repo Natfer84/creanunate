@@ -1,15 +1,18 @@
 
-import mongo from '../database/mongoConnection.js'
+import mongo from '../databases/mongoConnection.js'
 
 
-//const client = await mongo.connectToMongo()
+const client = await mongo.connectToMongo()
 // const close = await mongo.closeClient()
 
 const mydb = 'creanunate'
 
 export default {
 
-      allCourses: async (req, res) => {
+    // @route   GET api/courses 
+    // @desc    See all the courses
+    // @access  Public
+    allCourses: async (req, res) => {
 
         try {
             const db = client.db(mydb)
