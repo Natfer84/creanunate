@@ -7,9 +7,10 @@ const Courses = () => {
 
       const fetchCourses = async () => {
           try {
-              const response = await fetch('http://creanunate/courses/all-courses');
+              const response = await fetch('http://localhost:3000/creanunate/courses/all-courses');
               if (response.ok) {
                   const data = await response.json();
+                  console.log(data);
 
                   setCourses(data);
               } else {
