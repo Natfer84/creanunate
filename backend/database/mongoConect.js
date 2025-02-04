@@ -1,24 +1,22 @@
-const mongoose = require('mongoose')
 
-const url = 'mongodb://localhost:27017/creanunate'
+import mongoose from 'mongoose';
 
-module.exports = () =>{
 
-    const connect = () => {
-        url,
-        {
-            keepAlive: true,
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        },
-        (err) => {
-            if (err) {
-                console.log('db: ERROR!!');
-            } else {
-                console.log('Conexión correcta con creanunate')
-            }
-        }
-    }
+const urlMongo = 'mongodb://127.0.0.1:27017/creanunate'; 
 
-    connect();
-}
+const conectarDB = async () => {
+  try {
+    await mongoose.connect(urlMongo, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Conectado a MongoDB');
+  } catch (error) {
+    console.error('Error al conectar a MongoDB:', error.message);
+    process.exit(1); 
+  }
+};
+
+export default conectarDB;
+
+

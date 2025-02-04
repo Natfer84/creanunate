@@ -1,9 +1,20 @@
-const db = require('./database/mongoConect.js');
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import conectarDB from './database/mongoConect.js';
 
-const port = 3001;
+
+
+const app = express();
+const port = process.env.PORT || 3001;
+conectarDB(); 
+app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('Servidor funcionando correctamente');
+  });
 
 app.listen(port, () => {
-    console.log('La aplicación corre en el ' &{port});
+    console.log(`La aplicación corre en el: ${port}`);
 });
 
-db();
