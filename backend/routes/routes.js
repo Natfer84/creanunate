@@ -1,4 +1,4 @@
-import { Router } from 'express';
+/*import { Router } from 'express';
 import courses from '../controllers/coursesControllers.js';
 
 const router = Router();
@@ -7,4 +7,4 @@ const router = Router();
 //Courses
 router.get('/creanunate/courses/all-courses', courses.allCourses);
 
-export { router };
+export { router };*/
