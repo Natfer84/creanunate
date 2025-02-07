@@ -1,20 +1,16 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import conectarDB from './database/mongoConect.js';
+import express,{ json, urlencoded } from 'express'
+import cors from 'cors'
+import { router } from './routes/routes.js'
 
+const app = express()
 
+app.use(json())
+app.use(urlencoded({ extended: false }))
 
-const app = express();
-const port = process.env.PORT || 3001;
-conectarDB(); 
-app.use(express.json());
+app.use(cors())
 
-app.get('/', (req, res) => {
-    res.send('Servidor funcionando correctamente');
-  });
+app.use(router)
 
-app.listen(port, () => {
-    console.log(`La aplicación corre en el: ${port}`);
-});
+const port = process.env.PORT || 3001
 
+app.listen(port, () => console.log(`Server running on port ${port}`))
