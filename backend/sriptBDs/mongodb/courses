@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Pensamiento Creativo: Desbloquea tu Imaginación",
+    "description": "Aprende técnicas y estrategias para potenciar tu creatividad y generar ideas innovadoras en cualquier área.",
+    "video": "https://www.youtube.com/watch?v=VShmtsLhkQg",
+    "price": 0.99
+  },
+  {
+    "name": "Design Thinking: Innovación Centrada en el Usuario",
+    "description": "Explora el proceso de Design Thinking para resolver problemas de manera creativa y centrada en las necesidades del usuario.",
+    "video": "https://www.youtube.com/watch?v=RqaHh8XKIVg",
+    "price": 0.99
+  },
+  {
+    "name": "Escritura Creativa: De la Idea al Relato",
+    "description": "Desarrolla tu talento literario con técnicas de escritura creativa para contar historias atrapantes.",
+    "video": "https://www.youtube.com/watch?v=fHMPtYvZ8tM",
+    "price": 0.99
+  },
+  {
+    "name": "Dibujo y Creatividad: Expresa tus Ideas Visualmente",
+    "description": "Mejora tus habilidades de dibujo mientras exploras formas innovadoras de representar tus ideas.",
+    "video": "https://www.youtube.com/watch?v=TYzISNbb8kM",
+    "price": 0.99
+  },
+  {
+    "name": "Creatividad en los Negocios: Innovación para el Éxito",
+    "description": "Descubre cómo aplicar la creatividad en la gestión empresarial para destacar en el mercado.",
+    "video": "https://www.youtube.com/watch?v=m66oX5bH0z4",
+    "price": 0.99
+  },
+  {
+    "name": "Improvisación y Creatividad: Pensamiento Rápido",
+    "description": "Desarrolla tu capacidad de improvisación y resolución creativa de problemas en tiempo real.",
+    "video": "https://www.youtube.com/watch?v=M2zD3FX3lbU",
+    "price": 0.99
+  },
+  {
+    "name": "Arte Digital: Creación sin Límites",
+    "description": "Explora herramientas digitales para crear arte innovador y desarrollar tu estilo personal.",
+    "video": "https://www.youtube.com/watch?v=9XKLUbA98nM",
+    "price": 0.99
+  },
+  {
+    "name": "Fotografía Creativa: Composición y Estilo",
+    "description": "Aprende técnicas para mejorar tu fotografía y darle un toque creativo a tus imágenes.",
+    "video": "https://www.youtube.com/watch?v=8U8kPdLReyo",
+    "price": 0.99
+  },
+  {
+    "name": "Música y Creatividad: Composición e Improvisación",
+    "description": "Explora la creatividad musical y aprende a componer e improvisar con mayor libertad.",
+    "video": "https://www.youtube.com/watch?v=ACbYkaF2txU",
+    "price": 0.99
+  },
+  {
+    "name": "Creatividad Publicitaria: Marketing que Impacta",
+    "description": "Descubre cómo desarrollar campañas publicitarias originales y efectivas.",
+    "video": "https://www.youtube.com/watch?v=9kYgN5QW0b4",
+    "price": 0.99
+  }
+]

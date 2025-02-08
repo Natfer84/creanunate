@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Gamificación: Creatividad en la Educación y el Trabajo",
+    "description": "Aprende a aplicar estrategias de gamificación para hacer el aprendizaje y el trabajo más dinámicos y motivadores.",
+    "video": "https://www.youtube.com/watch?v=G3r2JKZ4H4I",
+    "price": 0.99
+  },
+  {
+    "name": "Creatividad en la Resolución de Conflictos",
+    "description": "Descubre técnicas innovadoras para manejar conflictos de manera efectiva y creativa en diferentes contextos.",
+    "video": "https://www.youtube.com/watch?v=F0XwiAF9jFA",
+    "price": 0.99
+  },
+  {
+    "name": "Creación de Contenido: Ideas que Enganchan",
+    "description": "Desarrolla habilidades para generar contenido creativo y atractivo en redes sociales, blogs y plataformas digitales.",
+    "video": "https://www.youtube.com/watch?v=NjwUHXoi8lM",
+    "price": 0.99
+  },
+  {
+    "name": "Creatividad en la Vida Cotidiana: Piensa Diferente",
+    "description": "Aprende a aplicar la creatividad en tu día a día para mejorar tu productividad, bienestar y toma de decisiones.",
+    "video": "https://www.youtube.com/watch?v=EME9Mwh-SwY",
+    "price": 0.99
+  }
+]

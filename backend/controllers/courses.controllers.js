@@ -16,7 +16,7 @@ export default {
             await mongo.closeClient()
         }
     },
-    getOne: async (req, res) => {
+   /* getOne: async (req, res) => {
 
         try {
             //Conformamos los datos de la solicitud
@@ -42,7 +42,7 @@ export default {
         } catch (e) {
             res.status(400).json({ mesagge: 'Error inesperado al obtener los datos del curso', error: e })
         }
-    },
+    },*/
 
     nextCourses: async (req, res) => {
         try {
