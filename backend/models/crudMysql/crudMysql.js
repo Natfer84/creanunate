@@ -7,5 +7,10 @@ export default {
     const query = "SELECT * FROM ??";
     const [result] = await connection.query(query, [...values]);
     return result;
+  },
+  oneCoursesFavorites: async(values) => {
+    const query ="SELECT * FROM ?? WHERE?? = ?";
+    const [result] = await connection.query(query,[...values]);
+    return result;
   }
 };

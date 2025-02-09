@@ -16,13 +16,14 @@ export default {
             await mongo.closeClient()
         }
     },
-   /* getOne: async (req, res) => {
+    //mirar el controlador. seleccionar un curso de favoritos
+  oneCoursesFavorites: async (req, res) => {
 
         try {
             //Conformamos los datos de la solicitud
             const values = ['id', req.body.id];
             console.log(values);
-            const course = await genericMongoCrud.getOne(process.env.COLL_COURSES);
+            const course = await genericMongoCrud.newOne(process.env.COLL_COURSES);
             console.log(course);
 
             if(course.length === 0){
@@ -42,7 +43,7 @@ export default {
         } catch (e) {
             res.status(400).json({ mesagge: 'Error inesperado al obtener los datos del curso', error: e })
         }
-    },*/
+    },
 
     nextCourses: async (req, res) => {
         try {
