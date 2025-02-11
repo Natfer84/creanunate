@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-//import Courses from "../styles/Courses.css";
-
+import '../styles/Course.css';
 const Courses = () => {
 
   const [courses, setCourses] = useState([]);
 
       const fetchCourses = async () => {
           try {
-              const response = await fetch('http://localhost:3000/creanunate/courses/all-courses');
+              const response = await fetch('http://localhost:3001/creanunate/courses/all-courses');
               if (response.ok) {
                   const data = await response.json();
                   console.log(data);
@@ -25,12 +24,13 @@ const Courses = () => {
 
 
   return (
-      <div className="Courses">
+      <div className="Courses_container">
           {courses.map((course, index) => (
-              <div key={index} className="Courses__course">
-                  <h2 className="Courses__name">{course.name}</h2>
-              
-                  <p className="Courses__code">{course.description}</p>
+              <div key={index} className="Courses__box">
+                <div className="Courses__box__video">{course.video}</div>
+                  <h2 className="Courses__box__name">{course.name}</h2>
+                  <p className="Courses__box__description">{course.description}</p>
+                  <p className="Courses__box__price">{course.price}</p>
               </div>
           ))}
       </div>

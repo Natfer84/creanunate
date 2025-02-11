@@ -1,0 +1,24 @@
+.Box__nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.Box__Nav__Ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 40px
+  }
+
+.Box__Nav__img__car {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background-color: grey;
+}
