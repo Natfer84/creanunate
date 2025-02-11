@@ -16,7 +16,7 @@ export default {
             await mongo.closeClient()
         }
     },
-    //mirar el controlador. seleccionar un curso de favoritos
+    //mirar el controlador. seleccionar un curso de favorit
   oneCoursesFavorites: async (req, res) => {
 
         try {
