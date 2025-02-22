@@ -1,3 +1,4 @@
+
 .Box__nav {
     display: flex;
     flex-direction: row;
@@ -5,6 +6,14 @@
     justify-content: center;
     align-items: center;
     color: white;
+    max-width: 100%;
+}
+.Box__nav a{
+    color: white;
+    text-decoration: none;
+}
+.Box__nav li :hover{
+    border-bottom: 1px solid white;
 }
 .Box__Nav__Ul {
     display: flex;
@@ -15,6 +24,10 @@
     list-style: none;
     gap: 40px
   }
+
+.Box__Nav__Li:hover{
+    border-bottom: 1px solid white;
+}
 
 .Box__Nav__img__car {
     height: 30px;
