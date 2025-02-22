@@ -1,3 +1,19 @@
 .Box_starts{
-    
+    height: 1683px;
+    background-image: url(../images/inicioCreanunate.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.Box__ball{
+    background-color: aqua;
+    height: 200px;
+    width: 200px;
+    border-radius: 10000px;
+    padding-top: 200px;
+}
+.Box__ball__p{
+    margin: 0px;
+    color: white;
+    text-align: center;
 }

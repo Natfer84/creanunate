@@ -3,4 +3,8 @@ body,
 ::before{
  box-sizing: border-box;
  margin: 0px;
+ font-family: "Montserrat", serif;
+ font-optical-sizing: auto;
+ font-weight: weight;
+ font-style: normal; 
 };

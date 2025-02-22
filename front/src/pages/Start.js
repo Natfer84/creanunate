@@ -1,10 +1,10 @@
 import React from "react";
-import Starts from '../components/Starts.js'
+import MainStarts from '../components/MainStarts.js';
 
 export default function Start () {
     return(
         <div>
-        <Starts />
+        <MainStarts />
         </div>
     );
 }

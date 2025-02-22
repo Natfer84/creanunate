@@ -2,4 +2,8 @@ body,
 ::after,
 ::before{
  box-sizing: border-box;
+ font-family: "Montserrat", serif;
+ font-optical-sizing: auto;
+ font-weight: weight;
+ font-style: normal;
 };
