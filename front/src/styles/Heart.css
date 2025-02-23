@@ -1,0 +1,32 @@
+
+.Heart__favorites{
+    width: 17px;
+    height: 17px;
+    background-color: red;
+    transform: rotate(-45deg);
+    position: relative;
+
+}
+
+.Heart__favorites::before{
+    content:'';
+    position: absolute;
+    top: -50%;
+    left: 0%;
+    width: 17px;
+    height: 17px;
+    background-color: red;
+    border-radius: 50%;
+ 
+}
+.Heart__favorites::after{
+    content:'';
+    position: absolute;
+    right:-50%;
+    width: 17px;
+    height: 17px;
+    background-color: red;
+    border-radius: 50%;
+  
+}
+

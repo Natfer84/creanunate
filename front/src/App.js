@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header.js";
 import Course from "../src/pages/Course.js";
 import Start from "../src/pages/Start.js";
+
 //import Courses from "./components/Courses";
 
 function App() {
