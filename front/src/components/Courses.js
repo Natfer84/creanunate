@@ -40,7 +40,8 @@ const Courses = () => {
 
           <h2 className="Courses__box__name">{course.name}</h2>
           <p className="Courses__box__description">{course.description}</p>
-          <p className="Courses__box__price">{course.price}</p>
+          <div className="Courses__box__price">{course.price}</div>
+        
         </div>
       ))}
     </div>
