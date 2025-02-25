@@ -1,31 +1,13 @@
-import React, { useState } from "react";
+
 import Heart from "../components/Heart";
+import useCourses from "../utils/useCourses.js";
 import "../styles/Course.css";
 
 
-const Courses = () => {
-  const [courses, setCourses] = useState([]);
+export default function Courses() {
 
-  const fetchCourses = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:3001/creanunate/courses/all-courses"
-      );
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-
-        setCourses(data);
-      } else {
-        console.error("Error en la respuesta del servidor:", response.status);
-      }
-    } catch (error) {
-      console.error("Error en la solicitud:", error);
-    }
-  };
-
-  fetchCourses();
-
+    const courses = useCourses();
+  
   return (
     <div className="Courses_container">
       {courses.map((course, index) => (
@@ -50,10 +32,6 @@ const Courses = () => {
         </div>
   
       ))}
-      
     </div>
-    
   );
-};
-
-export default Courses;
+}
