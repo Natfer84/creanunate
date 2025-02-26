@@ -16,6 +16,20 @@ export default {
             await mongo.closeClient()
         }
     },
+    //comprobando si funciona///////////
+    //trae totodos los cursos de acuarela pinchando en el globo de inicio acuarela
+    allAquarelle: async (req, res) =>{
+        try{
+            const { type } = req.params;
+            const result = await genericMongoCrud.getAll(process.env.COLL_COURSES, {type});
+            res.json(result)
+        } finally {
+            await mongo.closeClient()
+        }
+    },
+
+
+
     //mirar el controlador. seleccionar un curso de favorit
   oneCoursesFavorites: async (req, res) => {
 
@@ -54,4 +68,6 @@ export default {
             await mongo.closeClient()
         }
     }
+
+   
 }

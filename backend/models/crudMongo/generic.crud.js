@@ -12,6 +12,7 @@ export default {
         const result = await collection.find({}).toArray()
         return result;
     },
+    
     newOne: async(coll, values) => {
         const db = client.db(process.env.MONGO_BBDD)
         const collection = db.collection(coll)

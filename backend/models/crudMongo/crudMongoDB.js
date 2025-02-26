@@ -20,6 +20,10 @@ export default {
     return result;
   },
 
+
+
+  
+
   /*postComms: async (collectionName, data) => {
         let result={};
 		try {
