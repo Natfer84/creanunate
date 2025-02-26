@@ -3,7 +3,7 @@ import courses from '../controllers/courses.controllers.js';
 import nextCourses from '../controllers/courses.controllers.js';
 import coursesFavorites from "../controllers/coursesFavorites.controllers.js";
 import oneCoursesFavorites from "../controllers/courses.controllers.js"
-import coursesAquerelle from "../controllers/courses.controllers.js"
+import coursesTypeStart from "../controllers/courses.controllers.js"
 //import coursesOne from '../controllers/courses.controllers.js'
 
 const router = Router();
@@ -18,7 +18,7 @@ router.get('/creanunate/nextCourses/next-courses', nextCourses.nextCourses);
 
 //comprobando si funciona//////////
 //Seleccionar cursos segun el tipo de curso que sea en inicio
-router.get('/creanunate/courses/:type', coursesAquerelle.allAquarelle);
+router.get('/creanunate/courses/:type', coursesTypeStart.allCoursesTypeStart);
 
 //MySQL
 //Ver los cursos en favoritos

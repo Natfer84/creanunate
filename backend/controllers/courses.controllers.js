@@ -16,12 +16,12 @@ export default {
             await mongo.closeClient()
         }
     },
-    //comprobando si funciona///////////
-    //trae totodos los cursos de acuarela pinchando en el globo de inicio acuarela
-    allAquarelle: async (req, res) =>{
+    //endpoint funciona ///////////
+    //trae  los cursos por type pinchando en el globo de inicio acuarela
+    allCoursesTypeStart: async (req, res) =>{
         try{
             const { type } = req.params;
-            const result = await genericMongoCrud.getAll(process.env.COLL_COURSES, {type});
+            const result = await genericMongoCrud.getOne(process.env.COLL_COURSES, {type});
             res.json(result)
         } finally {
             await mongo.closeClient()

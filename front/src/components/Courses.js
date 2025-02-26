@@ -1,6 +1,7 @@
 
 import Heart from "../components/Heart";
 import useCourses from "../utils/useCourses.js";
+
 import "../styles/Course.css";
 
 

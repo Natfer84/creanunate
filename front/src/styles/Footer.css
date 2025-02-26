@@ -1,0 +1,43 @@
+*,
+::after,
+::before{
+ box-sizing: border-box;
+}
+.Box__Footer{
+ background-color: black;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ align-items: center;
+ padding: 20px;
+}
+.Box__Footer__Networks{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;  
+}
+.Box__Footer__Networks_Contact,
+.Box__Network{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    gap:10px;
+}
+.Box__Footer__Networks_Contact a{
+    color: white;
+    text-decoration: none;
+}
+.Box__Network__Insta img,
+.Box__Network__Facebook img{
+    width: 20px;
+    height: 20px;
+}
+.Box__Footer__Networks_p2{
+    color: white;
+}

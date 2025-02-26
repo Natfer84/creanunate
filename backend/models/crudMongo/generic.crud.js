@@ -4,12 +4,19 @@ dotenv.config();
 
 const client = await mongo.connectToMongo();
 
-//getAll trae todos los cursos actuales
+//getAll trae todos los cursos actuales en la page de Courses
 export default {
     getAll: async(coll) => {
         const db = client.db(process.env.MONGO_BBDD)
         const collection = db.collection(coll)
-        const result = await collection.find({}).toArray()
+        const result = await collection.find({}).toArray() // este collection.find({}) trae todos los cursos
+        return result;
+    },
+    //getOne trae los cursos por type:acuarela en inicio, en las bolas.
+    getOne: async(coll, data) => { //data en el caso del filtro por type tiene {type: acuarela}
+        const db = client.db(process.env.MONGO_BBDD)
+        const collection = db.collection(coll)
+        const result = await collection.find(data).toArray()
         return result;
     },
     
