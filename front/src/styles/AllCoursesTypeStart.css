@@ -1,3 +1,15 @@
+.Courses_container_AllCoursesTypeStart{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
 .Box__MainStarts__ball{
     background-color: aqua;
     height: 200px;
@@ -58,15 +70,4 @@
     top: 885px;
     right: 216px;
     transform: rotate(15deg);
-}
-.Courses_container_AllCoursesTypeStart{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0;
-    position: absolute;
-    bottom: 0px;
 }
