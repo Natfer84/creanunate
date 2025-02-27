@@ -1,8 +1,9 @@
 
 import Heart from "../components/Heart";
 import useCourses from "../utils/useCourses.js";
-
+import NextCourses from "./NextCourses.js";
 import "../styles/Course.css";
+
 
 
 export default function Courses() {
@@ -11,6 +12,9 @@ export default function Courses() {
   
   return (
     <div className="Courses_container">
+
+
+      
       {courses.map((course, index) => (
         <div key={index} className="Courses__box">
           <div className="Courses__box__video">
@@ -33,6 +37,8 @@ export default function Courses() {
         </div>
   
       ))}
+       <NextCourses />
     </div>
+  
   );
 }
