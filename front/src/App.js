@@ -1,7 +1,7 @@
 
 import "./styles/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "../src/components/Header.js";
+import Header from "./components/Header.js";
 import Course from "../src/pages/Course.js";
 import Start from "../src/pages/Start.js";
 import Footer from "./components/Footer.js";

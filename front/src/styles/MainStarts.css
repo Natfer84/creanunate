@@ -4,20 +4,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
-.Box__MainStarts__ball{
-    background-color: aqua;
-    height: 200px;
-    width: 200px;
-    border-radius: 10000px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.Box__MainStarts__ball__div{
-    margin: 0px;
-    color: white;
-    text-align: center;
+    align-items: end;
+    position: relative;
 }

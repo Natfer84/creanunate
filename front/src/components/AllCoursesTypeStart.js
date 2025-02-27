@@ -3,6 +3,7 @@ import useAllCoursesTypeStart from "../utils/useAllCoursesTypeStart.js"
 import Heart from "./Heart.js";
 import "../styles/MainStarts.css";
 import "../styles/Course.css";
+import "../styles/AllCoursesTypeStart.css";
 
 export default function AllCoursesTypeStart() {
 
@@ -33,7 +34,7 @@ export default function AllCoursesTypeStart() {
         );
       })}
 
-      <div className="Courses_container">
+      <div className="Courses_container_AllCoursesTypeStart">
         {courses.map((course, index) => (
           <div key={index} className="Courses__box">
             <div className="Courses__box__video">
