@@ -9,13 +9,26 @@ export default function AllCoursesTypeStart() {
 
   const balls = ["Collage", "Acrílicos", "Óleo", "Acuarela"];
 
-  const [selectedType, setSelectedType] = useState("");
+  const [selectedType, setSelectedType] = useState(null);
+
+   const [showCourses, setShowCourses] = useState(false);
 
   const courses = useAllCoursesTypeStart(selectedType);
   console.log(courses)
 
-  const handleBallClick = (type) => {
+  /*const handleBallClick = (type) => {
     setSelectedType(type); // Establece el tipo de arte seleccionado
+  };*/
+
+  //click en typo curso, se verifia si concide con type se muestran y si no coincide no. si se muestran y vuelves a clickar en otro typo como no coincide, primero se ocultany luego se muestran los otros
+  const handleBallClick = (type) => {
+    if (selectedType === type) {
+      setSelectedType(null);  
+      setShowCourses(false); 
+    } else {
+      setSelectedType(type); 
+      setShowCourses(true); 
+    }
   };
 
   return (
@@ -35,7 +48,10 @@ export default function AllCoursesTypeStart() {
       })}
 
       <div className="Courses_container_AllCoursesTypeStart">
-        {courses.map((course, index) => (
+        
+      {showCourses && selectedType && (
+        
+        courses.map((course, index) => (
           <div key={index} className="Courses__box">
             <div className="Courses__box__video">
               <iframe
@@ -55,7 +71,7 @@ export default function AllCoursesTypeStart() {
             </div>
           </div>
 
-        ))}
+      )))}
       </div>
     </div>
   );

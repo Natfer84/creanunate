@@ -24,7 +24,6 @@ export default {
         const db = client.db(process.env.MONGO_BBDD)
         const collection = db.collection(coll)
         const result = await collection.insertOne(values)
-
         return result;
     } 
 }

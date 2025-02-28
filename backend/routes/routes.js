@@ -13,10 +13,10 @@ const router = Router();
 //router.get('/creanunate/courses/all-courses', courses.allCourses);
 router.get('/creanunate/courses/all-courses', courses.allCourses);
 router.get('/creanunate/nextCourses/next-courses', nextCourses.nextCourses);
+
 //obtener un curso para llevarlo a mysql favoritos
 //router.post('/creanunate/coursesOne/get-One', coursesOne.getOne)
 
-//comprobando si funciona//////////
 //Seleccionar cursos segun el tipo de curso que sea en inicio
 router.get('/creanunate/courses/:type', coursesTypeStart.allCoursesTypeStart);
 

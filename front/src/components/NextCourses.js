@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import useNextCourses from "../utils/useNextCourses";
+import useNextCourses from "../utils/useNextCourses.js";
 import Heart from "./Heart";
+import "../styles/NextCourses.css"
 
 
 export default function NextCourses() {
@@ -22,27 +23,30 @@ export default function NextCourses() {
                 {/* damos click al párrafo y trae los cursos desde la función, como  está en false no se ven, pero al hacer clic cambia el estado y los muestra */}
                 <p onClick={() => { handleBallClick(showCourse) }}>PRóXIMOS CURSOS</p>
             </div>
-            {/*renderizado condicional */}
-            {showCourse && nextCourse.length > 0 && nextCourse.map((course, index) => (
-                <div key={index} className="Courses__box">
-                    <div className="Courses__box__video">
-                        <iframe
-                            src={`https://www.youtube.com/embed/${course.video.split("v=")[1]
-                                }`}
-                            title={`Video de YouTube: ${course.name}`}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
-                    </div>
+            <div className="Container__Box__NextCourses">
+                {/*renderizado condicional */}
+                {showCourse && nextCourse.length > 0 && nextCourse.map((course, index) => (
+                    <div key={index} className="Courses__box">
+                        <div className="Courses__box__video">
+                            <iframe
+                                src={`https://www.youtube.com/embed/${course.video.split("v=")[1]
+                                    }`}
+                                title={`Video de YouTube: ${course.name}`}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
 
-                    <h2 className="Courses__box__name">{course.name}</h2>
-                    <p className="Courses__box__description">{course.description}</p>
-                    <div className="Courses__box__price">{course.price}</div>
-                    <div className="Courses__box__favorites">
-                        <Heart />
+                        <h2 className="Courses__box__name">{course.name}</h2>
+                        <p className="Courses__box__description">{course.description}</p>
+                        <div className="Courses__box__price">{course.price}</div>
+                        <div className="Courses__box__favorites">
+                            <Heart />
+                        </div>
                     </div>
-                </div>
+                
             ))}
+            </div>
         </div>
     );
 }
