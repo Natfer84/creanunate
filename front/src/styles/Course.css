@@ -5,10 +5,6 @@
     gap: 20px;
     justify-content: center;
     margin: 30px 0;   
-    position: relative;
-    width: 100%;
-    height: 100vh; 
-    overflow: hidden;
   }
   
   .Container__Courses__box {
@@ -26,16 +22,6 @@
     margin: 30px 0;   
 
   }
-  #tsparticles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-
   .Courses__box {
     border: 1px solid #ddd;
     border-radius: 8px;

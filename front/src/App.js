@@ -5,6 +5,7 @@ import Header from "./components/Header.js";
 import Course from "../src/pages/Course.js";
 import Start from "../src/pages/Start.js";
 import Footer from "./components/Footer.js";
+import Login from "../src/components/Login.js"
 
 //import Courses from "./components/Courses";
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Start />}></Route>
           <Route path="/Course" element={<Course />}></Route>
+          <Route path="/Login" element={<Login />}></Route>
         </Routes>
         <Footer />
       </Router>

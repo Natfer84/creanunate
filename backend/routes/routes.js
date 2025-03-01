@@ -4,6 +4,9 @@ import nextCourses from '../controllers/courses.controllers.js';
 import coursesFavorites from "../controllers/coursesFavorites.controllers.js";
 import oneCoursesFavorites from "../controllers/courses.controllers.js"
 import coursesTypeStart from "../controllers/courses.controllers.js"
+import loginControllers from '../controllers/login.controllers.js';
+
+
 //import coursesOne from '../controllers/courses.controllers.js'
 
 const router = Router();
@@ -25,5 +28,9 @@ router.get('/creanunate/courses/:type', coursesTypeStart.allCoursesTypeStart);
 router.get('/creanunate/courses/all-favorites', coursesFavorites.allfavorites);
 //Enviar un curso a favoritos mediante id
 router.post('/creanunate/courses/one-favorites', oneCoursesFavorites.oneCoursesFavorites);
+
+//hacer login
+router.post('/creanunate/login/login', loginControllers.login);
+
 
 export { router };

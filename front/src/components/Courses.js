@@ -1,27 +1,21 @@
-
 import Heart from "../components/Heart";
 import useCourses from "../utils/useCourses.js";
 import NextCourses from "./NextCourses.js";
-import ParticleBackground from "../components/ParticleBackground"; 
 import "../styles/Course.css";
 
-
 export default function Courses() {
-
   const courses = useCourses();
 
   return (
     <div className="Courses_container">
-      <div id="tsparticles">
-         <ParticleBackground />
-      </div>
       <div className="Container__Courses__box">
         {courses.map((course, index) => (
           <div key={index} className="Courses__box">
             <div className="Courses__box__video">
               <iframe
-                src={`https://www.youtube.com/embed/${course.video.split("v=")[1]
-                  }`}
+                src={`https://www.youtube.com/embed/${
+                  course.video.split("v=")[1]
+                }`}
                 title={`Video de YouTube: ${course.name}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -39,11 +33,8 @@ export default function Courses() {
       </div>
 
       <div className="Container__NextCourses">
-        
         <NextCourses />
       </div>
-
     </div>
-
   );
 }

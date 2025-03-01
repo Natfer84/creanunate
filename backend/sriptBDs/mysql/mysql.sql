@@ -2,6 +2,21 @@
 CREATE DATABASE creanunate;
 USE creanunate;
 
+--solo verifica el login
+CREATE TABLE creanunate.login (
+    id INT AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL,
+    paswoord VARCHAR(100) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO creanunate.login (username, paswoord) VALUES 
+('juan123', 'claveSegura1'),
+('maria_lpz', 'contraseñaFuerte2'),
+('carlos89', 'pass12345'),
+('ana_gomez', 'miClaveSegura3'),
+('pedro_perez', 'password123');
+
 CREATE TABLE creanunate.customers (
     id INT AUTO_INCREMENT,
     `name` VARCHAR(100) NOT NULL,
@@ -13,7 +28,7 @@ CREATE TABLE creanunate.customers (
     fk_id_cart INT,
     fk_id_favorites INT,
     PRIMARY KEY(id)
-);
+);*/
 
 INSERT INTO creanunate.customers (id, name, surname, date_birth, email, isRequested, isVisible) 
 VALUES (NULL, "María", "Pérez", "2003-01-28", "maria@gmail.com", 1, 1);

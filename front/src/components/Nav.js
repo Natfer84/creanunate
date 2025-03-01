@@ -17,7 +17,9 @@ export default function Nav() {
             <Link to="/Course">Cursos</Link>
           </li>
 
-          <li className="Box__Nav__Li">Login</li>
+          <li className="Box__Nav__Li">
+          <Link to="/Login">Login</Link>
+          </li>
         </ul>
       </nav>
     </div>

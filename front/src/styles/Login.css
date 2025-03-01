@@ -1,0 +1,28 @@
+.Login__container{
+    margin: 0px auto;
+    background-color: rgb(215, 140, 140);
+    padding: 100px;
+}
+.Login__Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    padding: 30px;
+    background-color: rgb(193, 185, 185);
+    box-shadow: 5px 8px 8px rgb(148, 142, 142);
+    width: 600px;
+    border-radius: 30px;
+    margin: 0px auto;
+}
+.Login__Input{
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.Login__button{
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
