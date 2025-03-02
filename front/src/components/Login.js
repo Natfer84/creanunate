@@ -3,14 +3,34 @@ import "../styles/Login.css"
 
 export default function Login() {
 
-    const [password, setpasword] = useState('');
+    const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    console.log(password);
+    console.log(username);
 
 
-
-  const handdleLogin = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    console.log({password, username});
+    const data = {
+    password: password,  
+    username: username
+    };
+
+    fetch("http://localhost:3001/creanunate/login/login",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result =>{
+      console.log(result) 
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  
   };
 
   return (
@@ -22,15 +42,17 @@ export default function Login() {
         <input onChange={(event) => {setUsername(event.target.value)} } 
         placeholder="Email"
         type="text" 
-        className="Login__Input" />
+        className="Login__Input"
+         />
 
         <label className="Login__Label">Contraseña</label>
-        <input onChange={(event) => {setpasword(event.target.value)} }
+        <input onChange={(event) => {setPassword(event.target.value)} }
         placeholder="Contraseña " 
         type="password"
-        className="Login__Input" />
+        className="Login__Input"
+         />
 
-        <button onClick={handdleLogin} className="Login__button">
+        <button onClick={handleLogin} className="Login__button">
           Acceder
         </button>
 

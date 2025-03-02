@@ -14,10 +14,10 @@ export default {
     const query ="SELECT * FROM ?? WHERE?? = ?";
     const [result] = await connection.query(query,[...values]);
     return result;
-  }
+  },
 
   login: async (values) => {
-    const query = 'SELECT ??, ??, ??, ?? FROM ?? WHERE ?? = ? AND ?? = ? AND (?? = ? OR ?? = ?)'
+    const query = 'SELECT * FROM login WHERE username = ? AND password = ?;';
     const result = await connection.query(query, [...values])
     return result;
 },
