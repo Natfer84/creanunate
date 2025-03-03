@@ -9,8 +9,7 @@ export default{
     allfavorites: async (req, res) => {
         try {
             const values = ["favorites"];
-            const result = await crudMysql.getFavorites
-            (values)
+            const result = await crudMysql.getFavorites(values)
             
             res.json(result)
 console.log(result);

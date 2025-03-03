@@ -1,19 +1,22 @@
 import React, { useState } from "react";
+//import { Link } from "react-router-dom";
 import "../styles/Login.css"
 
 export default function Login() {
 
+const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [username, setUsername] = useState('');
-    console.log(password);
+    
+    
     console.log(username);
-
+    console.log(password);
 
   const handleLogin = (e) => {
     e.preventDefault();
     const data = {
-    password: password,  
-    username: username
+    username: username,
+    password: password 
+    
     };
 
     fetch("http://localhost:3001/creanunate/login/login",{
@@ -23,7 +26,11 @@ export default function Login() {
       },
       body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    //////mirar esto////////////
+    .then(response => {
+      console.log(response);  // Verifica la respuesta del servidor
+      return response.json();
+   })
     .then(result =>{
       console.log(result) 
     })

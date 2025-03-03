@@ -1,4 +1,5 @@
 import mysql from "../../databases/mysql.connection.js";
+
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -10,16 +11,18 @@ export default {
     const [result] = await connection.query(query, [...values]);
     return result;
   },
+
   oneCoursesFavorites: async(values) => {
-    const query ="SELECT * FROM ?? WHERE?? = ?";
+    const query ="SELECT * FROM ?? WHERE ?? = ?";
     const [result] = await connection.query(query,[...values]);
     return result;
   },
 
   login: async (values) => {
-    const query = 'SELECT * FROM login WHERE username = ? AND password = ?;';
-    const result = await connection.query(query, [...values])
+    const query = 'SELECT ??, ?? FROM ?? WHERE ?? = ? AND ?? = ?';
+    const result = await connection.query(query, [...values]);
     return result;
 },
+
 
 };
