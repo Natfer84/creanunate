@@ -4,41 +4,52 @@ import "../styles/Login.css"
 
 export default function Login() {
 
-const [username, setUsername] = useState('');
+  const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    //para mostrar los errores en login
+    const [errorMessage, setErrorMessage] = useState('');
+
     
     
     console.log(username);
     console.log(password);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+
+    setErrorMessage('');
+
+
     const data = {
     username: username,
     password: password 
-    
     };
 
-    fetch("http://localhost:3001/creanunate/login/login",{
+
+    try{
+
+    const response = await fetch("http://localhost:3001/creanunate/login/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
-    })
-    //////mirar esto////////////
-    .then(response => {
-      console.log(response);  // Verifica la respuesta del servidor
-      return response.json();
-   })
-    .then(result =>{
-      console.log(result) 
-    })
-    .catch(error =>{
-      console.log(error)
-    })
-  
-  };
+    });
+    
+   
+
+  const result = await response.json();
+  console.log("Respuesta del backend:", result);
+   if (!response.ok) {
+      throw new Error("Error en la respuesta del servidor");
+  }
+
+} catch (error) {
+  console.error("Error en el login:", error);
+  //capturas el error en el estado setErrorMessage
+  setErrorMessage(error.resul)
+}
+};
 
   return (
     <div className="Login__container">
@@ -58,6 +69,8 @@ const [username, setUsername] = useState('');
         type="password"
         className="Login__Input"
          />
+         {errorMessage && <p className="Login__Error">{errorMessage}</p>}
+         {!errorMessage && <p className="Login__Error">{errorMessage}</p>}
 
         <button onClick={handleLogin} className="Login__button">
           Acceder

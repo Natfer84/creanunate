@@ -26,3 +26,8 @@
     border-radius: 10px;
     cursor: pointer;
 }
+.Login__Error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }

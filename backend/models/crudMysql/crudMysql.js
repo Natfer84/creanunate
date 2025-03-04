@@ -19,10 +19,16 @@ export default {
   },
 
   login: async (values) => {
-    const query = 'SELECT ??, ?? FROM ?? WHERE ?? = ? AND ?? = ?';
-    const result = await connection.query(query, [...values]);
-    return result;
-},
+    const query = 'SELECT username, password FROM login WHERE username = ? AND password = ?';
+    try {
+        const [result] = await connection.query(query, values);
+        console.log("Resultado de la consulta en MySQL:", result);
+        return result;
+    } catch (error) {
+        console.error("Error en la consulta de login:", error);
+        return null;
+    }
+}
 
 
 };
