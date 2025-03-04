@@ -1,76 +1,97 @@
 import React, { useState } from "react";
-//import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import "../styles/Login.css"
 
 export default function Login() {
 
   const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    //para mostrar los errores en login
-    const [errorMessage, setErrorMessage] = useState('');
+  const [password, setPassword] = useState('');
+  //para mostrar login ok o error al hacer login
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loginOk, setLoginOk] = useState('');
+  const [unknownError, setUnknowError] = useState('');
 
-    
-    
-    console.log(username);
-    console.log(password);
+  const navigate = useNavigate(); 
 
+
+
+  console.log(username);
+  console.log(password);
+
+  //cuando damoa al noton llamamos a la funciones del error al ahacer login o OK
   const handleLogin = async (e) => {
     e.preventDefault();
-
     setErrorMessage('');
+    setLoginOk('');
+    setUnknowError('')
+    // si falta algun input del login sin ingresar
+    if (!username || !password) {
+      setErrorMessage("El campo usuario y/o contraseña, no puede estar vacío");
+      return; // Detener la ejecución si los campos están vacíos.
+    }
 
 
     const data = {
-    username: username,
-    password: password 
+      username: username,
+      password: password
     };
 
+    try {
 
-    try{
+      const response = await fetch("http://localhost:3001/creanunate/login/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
 
-    const response = await fetch("http://localhost:3001/creanunate/login/login",{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    });
-    
-   
 
-  const result = await response.json();
-  console.log("Respuesta del backend:", result);
-   if (!response.ok) {
-      throw new Error("Error en la respuesta del servidor");
-  }
 
-} catch (error) {
-  console.error("Error en el login:", error);
-  //capturas el error en el estado setErrorMessage
-  setErrorMessage(error.resul)
-}
-};
+      const result = await response.json();
+      console.log("Respuesta del backend:", result);
+
+      if (result.message === "Login exitoso") {
+        setLoginOk("¡Login exitoso! Bienvenido.");
+        navigate("/CustomerArea");
+      };
+
+      if (result.error === "El usuario no existe") {
+        setErrorMessage("El usuario no existe");
+        return;
+      }
+
+    } catch {
+      console.error("Error en el login:");
+      //capturas el error en el estado setErrorMessage
+      setUnknowError("Ha ocurrido un error desconocido.")
+    }
+  };
 
   return (
+    <div>
     <div className="Login__container">
       <form className="Login__Form">
 
         <label className="Login__Label">Usuario</label>
 
-        <input onChange={(event) => {setUsername(event.target.value)} } 
-        placeholder="Email"
-        type="text" 
-        className="Login__Input"
-         />
+        <input onChange={(event) => { setUsername(event.target.value) }}
+          placeholder="Email"
+          type="text"
+          className="Login__Input"
+        />
 
         <label className="Login__Label">Contraseña</label>
-        <input onChange={(event) => {setPassword(event.target.value)} }
-        placeholder="Contraseña " 
-        type="password"
-        className="Login__Input"
-         />
-         {errorMessage && <p className="Login__Error">{errorMessage}</p>}
-         {!errorMessage && <p className="Login__Error">{errorMessage}</p>}
+        <input onChange={(event) => { setPassword(event.target.value) }}
+          placeholder="Contraseña "
+          type="password"
+          className="Login__Input"
+        />
+        {errorMessage && <p className="Login__Error">{errorMessage}</p>}
+        {loginOk && <p className="Login__Success">{loginOk}</p>}
+        {unknownError && <p className="Login__Success">{unknownError}</p>}
+
 
         <button onClick={handleLogin} className="Login__button">
           Acceder
@@ -78,5 +99,6 @@ export default function Login() {
 
       </form>
     </div>
+  </div>
   );
 }

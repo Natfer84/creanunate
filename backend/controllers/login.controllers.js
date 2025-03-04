@@ -1,5 +1,5 @@
 import crudMysql from "../models/crudMysql/crudMysql.js";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import dotenv from "dotenv";
 
 export default {
@@ -28,11 +28,11 @@ export default {
           .status(200)
           .json({ message: "Login exitoso", user: existsCustomer[0] });
         //link al componente areaCliente
-
+      
 
       } else  {
          //Esto no funciona
-         return res.status(404).json({ error: "El usuario no existe" });
+         return res.status(404).json({ error: "El usuario no existe"});
       }
     } catch (error) {
       console.error("Error al hacer login:", error);
