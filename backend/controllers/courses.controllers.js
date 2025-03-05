@@ -28,8 +28,6 @@ export default {
         }
     },
 
-
-
     //mirar el controlador. seleccionar un curso de favorit
   oneCoursesFavorites: async (req, res) => {
 
@@ -67,7 +65,8 @@ export default {
         } finally {
             await mongo.closeClient()
         }
-    }
+    },
+
 
    
 }

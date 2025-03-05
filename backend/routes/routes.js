@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import courses from '../controllers/courses.controllers.js';
 import nextCourses from '../controllers/courses.controllers.js';
-import coursesFavorites from "../controllers/coursesFavorites.controllers.js";
+//import getUserFavorites from "../controllers/coursesFavorites.controllers.js";
 import oneCoursesFavorites from "../controllers/courses.controllers.js"
 import coursesTypeStart from "../controllers/courses.controllers.js"
 import loginControllers from '../controllers/login.controllers.js';
@@ -24,8 +24,9 @@ router.get('/creanunate/nextCourses/next-courses', nextCourses.nextCourses);
 router.get('/creanunate/courses/:type', coursesTypeStart.allCoursesTypeStart);
 
 //MySQL
-//Ver los cursos en favoritos
-router.get('/creanunate/courses/all-favorites', coursesFavorites.allfavorites);
+//Ver los cursos en favoritos dentro del área cliente
+//router.get('/creanunate/courses/get-user-favorites', getUserFavorites.getUserFavorites);
+
 //Enviar un curso a favoritos mediante id
 router.post('/creanunate/courses/one-favorites', oneCoursesFavorites.oneCoursesFavorites);
 

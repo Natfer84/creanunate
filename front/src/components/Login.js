@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 import "../styles/Login.css"
 
 export default function Login() {
@@ -11,6 +12,7 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState('');
   const [loginOk, setLoginOk] = useState('');
   const [unknownError, setUnknowError] = useState('');
+  
 
   const navigate = useNavigate(); 
 
@@ -19,7 +21,7 @@ export default function Login() {
   console.log(username);
   console.log(password);
 
-  //cuando damoa al noton llamamos a la funciones del error al ahacer login o OK
+  //cuando damos al boton llamamos a la funciones del error al ahacer login o OK
   const handleLogin = async (e) => {
     e.preventDefault();
     setErrorMessage('');
@@ -51,9 +53,13 @@ export default function Login() {
 
       const result = await response.json();
       console.log("Respuesta del backend:", result);
-
-      if (result.message === "Login exitoso") {
+////ESTOY MODIFICANDO ESTO//////////////////////////////////////////////
+      if (result.message === "Login exitoso") { 
         setLoginOk("¡Login exitoso! Bienvenido.");
+        
+        //aqui tengo que cargar los favoritos
+        //setUser(result.user); ///// esto lo tengo qu eborrar si no funciona
+        //setFavorites(result.favorites); ///// esto lo tengo qu eborrar si no funciona
         navigate("/CustomerArea");
       };
 
