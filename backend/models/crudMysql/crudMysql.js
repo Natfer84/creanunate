@@ -29,17 +29,17 @@ export default {
       return [];
     }
   },
-  getUserFavorites: async (id) => {
-    console.log("Davinia: ", id); /// entran aqui los favoritos
-   /* const query = `SELECT * FROM favorites WHERE fk_id_login = ?`;  
+  getUserFavorites: async (username) => {
+    console.log("Davinia: ", username); /// entran aqui los favoritos  //// TENGO QUE CAMBIAR LA QUERY 
+   const query = `SELECT * FROM favorites WHERE fk_id_login = (SELECT username FROM login WHERE username='?')`;  
     try {
-      const [result] = await connection.query(query, [id]);
+      const [result] = await connection.query(query, [username]);
       console.log("Favoritos obtenidOOOOOOOOOOOOs:", result); /// entran aqui los favoritos
       return result;
     } catch (error) {
       console.error("Error al obtener los favoritos del usuario:", error);
       return {A:'a'};
-    }*/
+    }
   }
   
   

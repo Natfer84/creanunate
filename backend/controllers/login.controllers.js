@@ -59,14 +59,14 @@ export default {
         return res.status(400).json({ message: "Falta el nombre de usuario" });
       }
   
-      // Obtiene el ID del usuario
-      const user = await crudMysql.getUserFavorites(username);
+      // Obtiene el ID del usuario 
+   const user = await crudMysql.getUserFavorites(username);
       if (!user) {
         return res.status(404).json({ message: "Usuario no encontrado" });
       }
-  
+  //FALTA BUSCAR EL ID DEL USUARIO O CAMBIAR LA BÚSQUEDA DE FAVORITOR A BUSCAR POR USERNAME
       // obtiene los favoritos
-      //const userFavorites = await crudMysql.getUserFavorites(user.id);
+      const userFavorites = await crudMysql.getUserFavorites(    );
   
       return res.status(200).json({
         message: "Favoritos obtenidos correctamente",
