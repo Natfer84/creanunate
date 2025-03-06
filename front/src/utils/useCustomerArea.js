@@ -1,21 +1,22 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState} from "react";
 
 export default function useCustomerArea({ username }) {
   const [favorites, setFavorites] = useState([]);
   const [error, setError] = useState('');
 
-  // 🔹 Envolvemos la función en useCallback para evitar que cambie en cada render
-  const getUserFavorites = useCallback(async () => {
+  
+  const getUserFavorites = async () => {
     if (!username) return;
 
     try {
       const response = await fetch(`http://localhost:3001/creanunate/courses/get-user-favorites?username=${username}`, {
+        
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
         },
       });
-
+      console.log("response de use customer ares", response)
       if (!response.ok) {
         throw new Error('Hubo un problema al obtener los cursos favoritos');
       }
@@ -28,7 +29,7 @@ export default function useCustomerArea({ username }) {
       console.error('Error al obtener los cursos favoritos:', error);
       setError('No se pudieron obtener los cursos favoritos');
     }
-  }, [username]); 
+  }; 
 
  
   useEffect(() => {

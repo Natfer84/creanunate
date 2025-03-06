@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-
 import "../styles/Login.css"
 
 export default function Login() {
@@ -52,13 +50,14 @@ export default function Login() {
 
 
       const result = await response.json();
-      console.log("Respuesta del backend:", result);
+      console.log("Respuesta del backend:", result);  /////////////////////////////// entran aqui los favoritos
 ////ESTOY MODIFICANDO ESTO//////////////////////////////////////////////
       if (result.message === "Login exitoso") { 
-        setLoginOk("¡Login exitoso! Bienvenido.");
-        navigate("/CustomerArea", { state: { username: result.user.username } });
-        //navigate("/CustomerArea");
-
+        setLoginOk("¡Login exitoso! Bienvenida/o.");
+        localStorage.setItem('username', result.user.username); // Guardamos username
+        localStorage.setItem('userId', result.user.id); // Guardamos userId
+        //navigate("/CustomerArea", { state: { username: result.user.username } });
+        navigate("/CustomerArea");
       };
 
       if (result.error === "El usuario no existe") {

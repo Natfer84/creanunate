@@ -22,27 +22,24 @@ export default {
     const query = 'SELECT id, username, password FROM login WHERE username = ? AND password = ?';
     try {
       const [result] = await connection.query(query, values);
-      console.log("Resultado de la consulta en MySQL:", result);
+      console.log("Resultado de la consulta en MySQL:", result);/// entran aqui los favoritos
       return result;
     } catch (error) {
       console.error("Error en la consulta de login:", error);
       return [];
     }
   },
-  getUserFavorites: async (userId) => {
-    const query = `
-      SELECT f.id, f.name, f.description, f.video, f.price 
-      FROM favorites f
-      WHERE f.user_id = ?`;  // 🔹 Aseguramos que seleccione todos los favoritos del usuario
-  
+  getUserFavorites: async (id) => {
+    console.log("Davinia: ", id); /// entran aqui los favoritos
+   /* const query = `SELECT * FROM favorites WHERE fk_id_login = ?`;  
     try {
-      const [result] = await connection.query(query, [userId]);
-      console.log("Favoritos obtenidos:", result); // 🔹 Para verificar en consola
+      const [result] = await connection.query(query, [id]);
+      console.log("Favoritos obtenidOOOOOOOOOOOOs:", result); /// entran aqui los favoritos
       return result;
     } catch (error) {
       console.error("Error al obtener los favoritos del usuario:", error);
-      return [];
-    }
+      return {A:'a'};
+    }*/
   }
   
   

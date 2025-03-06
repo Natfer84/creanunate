@@ -1,33 +1,41 @@
-import { useNavigate } from "react-router-dom";
-
+//import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+//import useCustomerArea from "../utils/useCustomerArea";
 import "../styles/CustomerArea.css";
 
 export default function CustomerArea() {
-    const navigate = useNavigate();
-    const username = navigate.state?.username || '';
+    const username = localStorage.getItem('username'); //// aquí los recoge, se ven
+    console.log(username)
+    const userId = localStorage.getItem('userId');  //// aquí los recoge, se ven
+console.log(userId)
+
     const [favorites, setFavorites] = useState([]);
     const [error, setError] = useState('');
 
-    // 🔹 Obtener favoritos desde el backend cuando el componente se carga
+ // obtenemos el username desde el localStorage y accedemos a los favoritos desde el backend
     useEffect(() => {
+      if (!username) return;
+
       const getUserFavorites = async () => {
         try {
           const response = await fetch(`http://localhost:3001/creanunate/courses/get-user-favorites?username=${username}`);
+          console.log("response del flont: " `http://localhost:3001/creanunate/courses/get-user-favorites?username=${username} `);
+
           if (!response.ok) {
             throw new Error("No se pudieron obtener los favoritos");
           }
           const result = await response.json();
+          console.log("result del front area cliente" , result); ////////////////// aquí no entra favoritos
           setFavorites(result.favorites || []);
         } catch (error) {
           setError(error.message);
         }
-      };
-  
-      if (username) {
+      };                          ////?username=${username}
+                                ///creanunate/courses/get-user-favorites
+   
         getUserFavorites();
-      }
-    }, [username]);
+      
+    }, [userId]);//// estoy cambiando esto
   
     return (
       <div>

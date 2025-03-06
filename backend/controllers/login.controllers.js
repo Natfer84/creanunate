@@ -21,7 +21,7 @@ export default {
       console.log("datos de value", values);
 
       const existsCustomer = await crudMysql.login(values); //aquí no entra
-      console.log("Consultando en la base de datos...", existsCustomer);
+      console.log("Consultando en la base de datos...", existsCustomer);  //////////////////// entran aqui los favoritos
 
       if (existsCustomer && existsCustomer.length > 0) {
         ///ESTOY MODIFICANDO ESTO///////////////////////
@@ -33,8 +33,8 @@ export default {
           .status(200)
           .json({ 
             message: "Login exitoso",
-            user: existsCustomer[0],
-            favorites: userFavorites || [] 
+            user: user,  // Ahora se devuelve el id
+            favorites: userFavorites || []
            });
      
       //////////////////////////////////////////////////////////////////////////////
@@ -53,19 +53,20 @@ export default {
   getUserFavorites: async (req, res) => {
     try {
       const { username } = req.query;
+      console.log(username);
   
       if (!username) {
         return res.status(400).json({ message: "Falta el nombre de usuario" });
       }
   
-      // Obtener ID del usuario
-      const user = await crudMysql.getUserByUsername(username);
+      // Obtiene el ID del usuario
+      const user = await crudMysql.getUserFavorites(username);
       if (!user) {
         return res.status(404).json({ message: "Usuario no encontrado" });
       }
   
-      // Obtener los favoritos
-      const userFavorites = await crudMysql.getUserFavorites(user.id);
+      // obtiene los favoritos
+      //const userFavorites = await crudMysql.getUserFavorites(user.id);
   
       return res.status(200).json({
         message: "Favoritos obtenidos correctamente",

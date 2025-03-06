@@ -31,6 +31,6 @@ router.post('/creanunate/courses/one-favorites', oneCoursesFavorites.oneCoursesF
 //hacer login
 router.post('/creanunate/login/login', loginControllers.login);
 //Ver los cursos en favoritos dentro del área cliente
-router.get('/creanunate/courses/get-user-favorites', loginControllers.getUserFavorites);
-
+//router.get('/creanunate/courses/get-user-favorites', loginControllers.getUserFavorites);
+router.get('/creanunate/courses/favorites', ()=>console.log("Hola"));
 export { router };
