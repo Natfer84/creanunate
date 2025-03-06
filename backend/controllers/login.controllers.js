@@ -24,11 +24,20 @@ export default {
       console.log("Consultando en la base de datos...", existsCustomer);
 
       if (existsCustomer && existsCustomer.length > 0) {
+        ///ESTOY MODIFICANDO ESTO///////////////////////
+
+        const user = existsCustomer[0];
+        const userFavorites = await crudMysql.getUserFavorites(user.id);
+        
          return res
           .status(200)
-          .json({ message: "Login exitoso", user: existsCustomer[0] });
-        //link al componente areaCliente
-      
+          .json({ 
+            message: "Login exitoso",
+            user: existsCustomer[0],
+            favorites: userFavorites || [] 
+           });
+     
+      //////////////////////////////////////////////////////////////////////////////
 
       } else  {
          //Esto no funciona
@@ -40,6 +49,37 @@ export default {
     }
 
   },
-};
-/// me funciona el login, pero tengo que traer los cursos favoritos 
+ 
+  getUserFavorites: async (req, res) => {
+    try {
+      const { username } = req.query;
+  
+      if (!username) {
+        return res.status(400).json({ message: "Falta el nombre de usuario" });
+      }
+  
+      // Obtener ID del usuario
+      const user = await crudMysql.getUserByUsername(username);
+      if (!user) {
+        return res.status(404).json({ message: "Usuario no encontrado" });
+      }
+  
+      // Obtener los favoritos
+      const userFavorites = await crudMysql.getUserFavorites(user.id);
+  
+      return res.status(200).json({
+        message: "Favoritos obtenidos correctamente",
+        favorites: userFavorites || []
+      });
+  
+    } catch (error) {
+      console.error("Error al obtener los favoritos:", error);
+      res.status(500).json({ message: "Error interno del servidor" });
+    }
+  }
+  
+  };
+  
+
+
 

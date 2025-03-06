@@ -56,11 +56,9 @@ export default function Login() {
 ////ESTOY MODIFICANDO ESTO//////////////////////////////////////////////
       if (result.message === "Login exitoso") { 
         setLoginOk("¡Login exitoso! Bienvenido.");
-        
-        //aqui tengo que cargar los favoritos
-        //setUser(result.user); ///// esto lo tengo qu eborrar si no funciona
-        //setFavorites(result.favorites); ///// esto lo tengo qu eborrar si no funciona
-        navigate("/CustomerArea");
+        navigate("/CustomerArea", { state: { username: result.user.username } });
+        //navigate("/CustomerArea");
+
       };
 
       if (result.error === "El usuario no existe") {
