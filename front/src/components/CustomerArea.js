@@ -1,58 +1,36 @@
-//import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-//import useCustomerArea from "../utils/useCustomerArea";
-import "../styles/CustomerArea.css";
+import useCustomerArea from "../utils/useCustomerArea";
+//import { useEffect, useState } from "react";
+import Heart from "./Heart";
+import "../styles/CoursesFavorites.css";
 
-export default function CustomerArea() {
-    const username = localStorage.getItem('username'); //// aquí los recoge, se ven
-    console.log(username)
-    const userId = localStorage.getItem('userId');  //// aquí los recoge, se ven
-console.log(userId)
 
-    const [favorites, setFavorites] = useState([]);
-    const [error, setError] = useState('');
-
- // obtenemos el username desde el localStorage y accedemos a los favoritos desde el backend
-    useEffect(() => {
-      if (!username) return;
-
-      const getUserFavorites = async () => {
-        try {
-          const response = await fetch(`http://localhost:3001/creanunate/courses/get-user-favorites?username=${username}`);
-          console.log("response del flont: " `http://localhost:3001/creanunate/courses/get-user-favorites?username=${username} `);
-
-          if (!response.ok) {
-            throw new Error("No se pudieron obtener los favoritos");
-          }
-          const result = await response.json();
-          console.log("result del front area cliente" , result); ////////////////// aquí no entra favoritos
-          setFavorites(result.favorites || []);
-        } catch (error) {
-          setError(error.message);
-        }
-      };                          ////?username=${username}
-                                ///creanunate/courses/get-user-favorites
-   
-        getUserFavorites();
-      
-    }, [userId]);//// estoy cambiando esto
+export default function CustomerArea(){
   
+  const { favorites, error } = useCustomerArea();
     return (
-      <div>
-        <h1>Bienvenido, {username}</h1>
+      <div className="Courses_container_Favorites">
+        <div className="Box__favorites__h1_h2">
+        <h1>Bienvenido/a</h1>
         <h2>Mis Cursos Favoritos</h2>
-        {error && <p>{error}</p>}
+        </div>
+        {error && <p style={{ color: "red" }}>{error}</p>}
         {favorites.length === 0 ? <p>No tienes cursos favoritos.</p> : (
-          <ul>
+        <div className="Box__favorites">
             {favorites.map((fav) => (
-              <li key={fav.id}>
+              <div className="Box__favorites__div" key={fav.id} >
                 <h3>{fav.name}</h3>
                 <p>{fav.description}</p>
-                <p>Precio: ${fav.price}</p>
-              </li>
+                <div className="Box__favorites__Price_Heart">
+                <p>{fav.price}€</p>
+               <div>
+                  <Heart />
+              </div>
+              </div>
+              </div>
             ))}
-          </ul>
+       </div>
         )}
       </div>
     );
   }
+

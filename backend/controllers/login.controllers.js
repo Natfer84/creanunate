@@ -53,24 +53,27 @@ export default {
   getUserFavorites: async (req, res) => {
     try {
       const { username } = req.query;
-      console.log(username);
+      console.log("Buscando favoritos para:", username);
   
       if (!username) {
         return res.status(400).json({ message: "Falta el nombre de usuario" });
       }
   
       // Obtiene el ID del usuario 
-   const user = await crudMysql.getUserFavorites(username);
-      if (!user) {
-        return res.status(404).json({ message: "Usuario no encontrado" });
-      }
+   //const user = await crudMysql.getUserFavorites(username);
+     // if (!user) {
+      //  return res.status(404).json({ message: "Usuario no encontrado" });
+    //  }
   //FALTA BUSCAR EL ID DEL USUARIO O CAMBIAR LA BÚSQUEDA DE FAVORITOR A BUSCAR POR USERNAME
       // obtiene los favoritos
-      const userFavorites = await crudMysql.getUserFavorites(    );
-  
+      const userFavorites = await crudMysql.getUserFavorites(username);
+      if(!userFavorites || userFavorites.length === 0){
+        return res.status(400).json({message: "No se encontraron favoritos para este usuario"})
+      }
       return res.status(200).json({
         message: "Favoritos obtenidos correctamente",
-        favorites: userFavorites || []
+        //favorites: userFavorites || []
+        favorites: userFavorites,
       });
   
     } catch (error) {
