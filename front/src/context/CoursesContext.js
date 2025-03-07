@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-// 1. Crear el contexto
+
 const CoursesContext = createContext();
 
-// 2. Crear el proveedor del contexto
+
 export const CoursesProvider = ({ children }) => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -37,7 +37,7 @@ export const CoursesProvider = ({ children }) => {
   );
 };
 
-// 3. Custom Hook para consumir el contexto
+
 export const useCourses = () => {
   return useContext(CoursesContext);
 };

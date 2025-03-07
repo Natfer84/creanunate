@@ -8,7 +8,7 @@ const SECRET_KEY = process.env.SECRET_KEY || "miClaveSuperSecreta"; // Clave par
 
 
 export default {
-  // Función para manejar el inicio de sesión
+  
   login: async (req, res) => {
     try {
       const { username, password } = req.body; // Recoge los datos del body.
@@ -49,7 +49,7 @@ export default {
             message: "Login exitoso",
             user: user,  // Ahora se devuelve el id
             favorites: userFavorites || [],
-            token, // 🔹 Asegúrate de que se está enviando aquí
+            token, // aqui entrari ael token
             user: {
               id: user.id,
               username: user.username
