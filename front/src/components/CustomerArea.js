@@ -1,22 +1,29 @@
 import useCustomerArea from "../utils/useCustomerArea";
 //import { useEffect, useState } from "react";
 import Heart from "./Heart";
+import { useState } from "react";
 import "../styles/CoursesFavorites.css";
 
 
 export default function CustomerArea(){
   
   const { favorites, error } = useCustomerArea();
+  const [showFavorites, setShowFavorites] = useState(true); // aquí verdadero para mostrarlos
+
     return (
       <div className="Courses_container_Favorites">
         <div className="Box__favorites__h1_h2">
-        <h1>Bienvenido/a</h1>
-        <h2>Mis Cursos Favoritos</h2>
+        <h1>Hola! Estás en tu área cliente</h1>
+         <h2 onClick={() => {console.log("Click en Mis Cursos Favoritos");setShowFavorites(!showFavorites)}}> {/*aqui falso para que no semuestren*/}
+          Mis Cursos Favoritos
+        </h2>
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
+      
         {favorites.length === 0 ? <p>No tienes cursos favoritos.</p> : (
         <div className="Box__favorites">
             {favorites.map((fav) => (
+              showFavorites && (
               <div className="Box__favorites__div" key={fav.id} >
                 <h3>{fav.name}</h3>
                 <p>{fav.description}</p>
@@ -27,7 +34,7 @@ export default function CustomerArea(){
               </div>
               </div>
               </div>
-            ))}
+            )))}
        </div>
         )}
       </div>

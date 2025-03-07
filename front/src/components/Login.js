@@ -57,7 +57,8 @@ export default function Login() {
         localStorage.setItem('username', result.user.username); // Guardamos username
         localStorage.setItem('userId', result.user.id); // Guardamos userId
         //navigate("/CustomerArea", { state: { username: result.user.username } });
-        navigate("/CustomerArea");
+        navigate("/CustomerArea");///CAMBIO NAVIGATE A CUSTOM AREA POR LOGIN PARA CUANDO HAGA LOFGIN CARGE OTRA VEZ LOS
+        //navigate("/Course")
       };
 
       if (result.error === "El usuario no existe") {
