@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "../styles/Login.css"
 
 export default function Login() {
@@ -54,6 +55,17 @@ export default function Login() {
 ////ESTOY MODIFICANDO ESTO//////////////////////////////////////////////
       if (result.message === "Login exitoso") { 
         setLoginOk("¡Login exitoso! Bienvenida/o.");
+
+       ///////////////////////////////////////  TOKEN  //////////////////////////////////
+
+        if (result.token) {
+          localStorage.setItem("token", result.token); // se guarda el token en local
+          console.log("token del front: ", result.token) 
+        }
+        console.log("Token JWT:", localStorage.getItem("token"));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
         localStorage.setItem('username', result.user.username); // Guardamos username
         localStorage.setItem('userId', result.user.id); // Guardamos userId
         //navigate("/CustomerArea", { state: { username: result.user.username } });

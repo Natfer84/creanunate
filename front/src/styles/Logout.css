@@ -1,0 +1,12 @@
+.Box__LogOut{
+    padding: 30px;
+    border-radius: 1px solid grey;
+    background-color: rgb(232, 232, 232);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Box__LogOut__div{
+    color: rgb(61, 61, 61)
+}

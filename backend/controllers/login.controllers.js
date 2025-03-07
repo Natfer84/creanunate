@@ -1,6 +1,11 @@
 import crudMysql from "../models/crudMysql/crudMysql.js";
-import { Link } from "react-router-dom";
-import dotenv from "dotenv";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+
+//import { Link } from "react-router-dom";
+//import dotenv from "dotenv";
+const SECRET_KEY = process.env.SECRET_KEY || "miClaveSuperSecreta"; // Clave para firmar el JWT
+
 
 export default {
   // Función para manejar el inicio de sesión
@@ -27,6 +32,15 @@ export default {
         ///ESTOY MODIFICANDO ESTO///////////////////////
 
         const user = existsCustomer[0];
+
+        //////////////////////////////////////   TOKEN   /////////////////////////////////////
+        const token = jwt.sign(
+          { id: user.id, username: user.username }, // Información en el token
+          SECRET_KEY,
+          { expiresIn: "1h" } // Expira en 1 hora
+        );
+        ////////////////////////////////////////////////////////////////////////////////////////
+
         const userFavorites = await crudMysql.getUserFavorites(user.id);
         
          return res
@@ -34,8 +48,12 @@ export default {
           .json({ 
             message: "Login exitoso",
             user: user,  // Ahora se devuelve el id
-            favorites: userFavorites || []
-           });
+            favorites: userFavorites || [],
+            token, // 🔹 Asegúrate de que se está enviando aquí
+            user: {
+              id: user.id,
+              username: user.username
+           }});
      
       //////////////////////////////////////////////////////////////////////////////
 

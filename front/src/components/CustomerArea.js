@@ -1,13 +1,14 @@
 import useCustomerArea from "../utils/useCustomerArea";
 //import { useEffect, useState } from "react";
 import Heart from "./Heart";
+import Logout from "./Logout";
 import { useState } from "react";
 import "../styles/CoursesFavorites.css";
 
 
 export default function CustomerArea(){
   
-  const { favorites, error } = useCustomerArea();
+  const { favorites, error } = useCustomerArea(); //custom hook
   const [showFavorites, setShowFavorites] = useState(true); // aquí verdadero para mostrarlos
 
     return (
@@ -17,6 +18,9 @@ export default function CustomerArea(){
          <h2 onClick={() => {console.log("Click en Mis Cursos Favoritos");setShowFavorites(!showFavorites)}}> {/*aqui falso para que no semuestren*/}
           Mis Cursos Favoritos
         </h2>
+        <div>
+          <Logout />
+        </div>
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
       
