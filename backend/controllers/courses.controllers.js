@@ -6,7 +6,17 @@ import dotenv from 'dotenv'
 
 export default {
 
-   
+    // Enpoint en funcionamiento
+     /**
+     * @swagger
+     * /courses:
+     *   get:
+     *     summary: Obtiene todos los cursos
+     *     tags: [Cursos]
+     *     responses:
+     *       200:
+     *         description: Lista de cursos obtenida con éxito
+     */
     allCourses: async (req, res) => {
         try {
             const result = await genericMongoCrud.getAll(process.env.COLL_COURSES)
@@ -16,8 +26,24 @@ export default {
             await mongo.closeClient()
         }
     },
-    //endpoint funciona ///////////
-    //trae  los cursos por type pinchando en el globo de inicio acuarela
+    // Enpoint en funcionamiento
+    /**
+     * @swagger
+     * /courses/type/{type}:
+     *   get:
+     *     summary: Obtiene los cursos por tipo
+     *     tags: [Cursos]
+     *     parameters:
+     *       - in: path
+     *         name: type
+     *         required: true
+     *         schema:
+     *           type: string
+     *         description: Tipo de curso (ejemplo "acuarela)
+     *     responses:
+     *       200:
+     *         description: Lista de cursos del tipo especificado
+     */
     allCoursesTypeStart: async (req, res) =>{
         try{
             const { type } = req.params;
@@ -28,7 +54,29 @@ export default {
         }
     },
 
-    //mirar el controlador. seleccionar un curso de favorit
+    // Endpoint reservado para la versión 2
+    /**
+     * @swagger
+     * /courses/favorites:
+     *   post:
+     *     summary: Selecciona un curso como favorito
+     *     tags: [Cursos]
+     *     requestBody:
+     *       required: true
+     *       content:
+     *         application/json:
+     *           schema:
+     *             type: object
+     *             properties:
+     *               id:
+     *                 type: string
+     *                 example: "12345"
+     *     responses:
+     *       200:
+     *         description: Curso marcado como favorito con éxito
+     *       400:
+     *         description: Error, ID del curso no encontrada
+     */
   oneCoursesFavorites: async (req, res) => {
 
         try {
@@ -57,6 +105,17 @@ export default {
         }
     },
 
+    // Enpoint en funcionamiento
+       /**
+     * @swagger
+     * /courses/next:
+     *   get:
+     *     summary: Obtiene los próximos cursos
+     *     tags: [Cursos]
+     *     responses:
+     *       200:
+     *         description: Lista de próximos cursos obtenida con éxito
+     */
     nextCourses: async (req, res) => {
         try {
             const result = await genericMongoCrud.getAll(process.env.COLL_NEXCOURSES)

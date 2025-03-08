@@ -2,7 +2,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-
+//////// Controller de favoritos para la versión 2
 
 export default {
 
