@@ -19,7 +19,9 @@
 .Box__favorites__h1_h2 h2{
     cursor: pointer;  
     display: inline;
+    border-bottom: 1px solid #525050;
 }
+
 .Box__favorites__h1_h2 h2:hover{
     font-size: 2em;
 }

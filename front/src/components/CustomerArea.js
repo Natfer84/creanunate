@@ -12,7 +12,9 @@ export default function CustomerArea(){
   const [showFavorites, setShowFavorites] = useState(true); // aquí verdadero para mostrarlos
 
     return (
+      
       <div className="Courses_container_Favorites">
+
         <div className="Box__favorites__h1_h2">
         <h1>Hola! Estás en tu área cliente</h1>
          <h2 onClick={() => {console.log("Click en Mis Cursos Favoritos");setShowFavorites(!showFavorites)}}> {/*aqui falso para que no semuestren*/}

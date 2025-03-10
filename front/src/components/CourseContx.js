@@ -1,6 +1,8 @@
 import Heart from "./Heart.js";
 import { useCourses } from "../context/CoursesContext.js"; // Importamos el contexto
 import NextCourses from "./NextCourses.js";
+
+
 import "../styles/Course.css";
 
 export default function CoursesContx() {
@@ -12,7 +14,8 @@ export default function CoursesContx() {
 
   return (
     <div className="Courses_container">
-      <div className="Container__Courses__box">
+      
+      <div className="Container__Courses__box" style={{ position: 'relative' }}>
         {courses.map((course, index) => (
           <div key={index} className="Courses__box">
             <div className="Courses__box__video">
@@ -25,10 +28,13 @@ export default function CoursesContx() {
             </div>
 
             <h2 className="Courses__box__name">{course.name}</h2>
+
             <p className="Courses__box__description">{course.description}</p>
-            <div className="Courses__box__price">{course.price}</div>
-            <div className="Courses__box__favorites">
-              <Heart />
+            <div className="Courses__box__price_favorites">
+              <div className="Courses__box__price">{course.price}</div>
+              <div className="Courses__box__favorites">
+                <Heart />
+              </div>
             </div>
           </div>
         ))}

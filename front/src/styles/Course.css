@@ -32,13 +32,18 @@
     max-width: 100%;
     background-color: #fff;
     transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
+    box-shadow: inset 0px 0px 4px 0px rgb(77, 77, 77);
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    }
   .Courses__box:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
-
   .Courses__box__video {
     max-width: 100%;
     height: auto;
@@ -46,6 +51,7 @@
     cursor: pointer;
     margin-bottom: 15px;
     transition: transform 0.3s;
+    text-align: center;
   }
   
   .Courses__box__video:hover {
@@ -64,4 +70,11 @@
     font-size: 1rem;
     color: #555;
     line-height: 1.5;
+  }
+  .Courses__box__price_favorites{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: ;
   }

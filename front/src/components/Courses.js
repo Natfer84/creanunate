@@ -1,6 +1,7 @@
 import Heart from "../components/Heart";
 import useCourses from "../utils/useCourses.js";
 import NextCourses from "./NextCourses.js";
+import ParticleBackground from "./ParticleBackground.js";
 import "../styles/Course.css";
 
 export default function Courses() {
@@ -8,6 +9,7 @@ export default function Courses() {
 
   return (
     <div className="Courses_container">
+      <ParticleBackground />
       <div className="Container__Courses__box">
         {courses.map((course, index) => (
           <div key={index} className="Courses__box">
@@ -24,10 +26,14 @@ export default function Courses() {
 
             <h2 className="Courses__box__name">{course.name}</h2>
             <p className="Courses__box__description">{course.description}</p>
+
+            <div className="Courses__box__price_favorites">
             <div className="Courses__box__price">{course.price}</div>
             <div className="Courses__box__favorites">
               <Heart />
             </div>
+            </div>
+
           </div>
         ))}
       </div>
