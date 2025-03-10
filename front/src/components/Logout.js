@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/Logout.css"
 
+// Cerrar sesión en área cliente.
 const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); 
+    // Borra el token, el nombre y el id.
+    localStorage.removeItem("token");       
     localStorage.removeItem("username");
     localStorage.removeItem("userId");
     navigate("/"); 

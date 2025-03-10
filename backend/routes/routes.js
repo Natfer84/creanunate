@@ -5,8 +5,6 @@ import nextCourses from '../controllers/courses.controllers.js';
 import oneCoursesFavorites from "../controllers/courses.controllers.js"
 import coursesTypeStart from "../controllers/courses.controllers.js"
 import loginControllers from '../controllers/login.controllers.js';
-
-
 //import coursesOne from '../controllers/courses.controllers.js'
 
 const router = Router();
@@ -53,6 +51,9 @@ const router = Router();
  */
 router.get('/creanunate/courses/all-courses', courses.allCourses);
 
+
+// Endpoint funcionando
+// NextCourses
 /**
  * @swagger
  * /creanunate/nextCourses/next-courses:
@@ -95,9 +96,56 @@ router.get('/creanunate/nextCourses/next-courses', nextCourses.nextCourses);
 //obtener un curso para llevarlo a mysql favoritos
 //router.post('/creanunate/coursesOne/get-One', coursesOne.getOne)
 
+
 // Endpoint funcionando
 // Start
 //Seleccionar cursos segun el tipo de curso que sea en inicio
+/**
+ * @swagger
+ * /creanunate/courses/{type}:
+ *   get:
+ *     summary: Obtiene todos los cursos de un tipo específico
+ *     tags: 
+ *       - Cursos
+ *     parameters:
+ *       - in: path
+ *         name: type
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Tipo de curso a consultar (ej. "acuarela", "óleo", "collage")
+ *     responses:
+ *       200:
+ *         description: Lista de cursos obtenida correctamente.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Cursos obtenidos correctamente"
+ *                 courses:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                         example: 1
+ *                       name:
+ *                         type: string
+ *                         example: "Curso de JavaScript"
+ *                       type:
+ *                         type: string
+ *                         example: "acuarela"
+ *       400:
+ *         description: Parámetro "type" no proporcionado o inválido.
+ *       404:
+ *         description: No se encontraron cursos de ese tipo.
+ *       500:
+ *         description: Error interno del servidor.
+ */
 router.get('/creanunate/courses/:type', coursesTypeStart.allCoursesTypeStart);
 
 
@@ -109,8 +157,9 @@ router.get('/creanunate/courses/:type', coursesTypeStart.allCoursesTypeStart);
 router.post('/creanunate/courses/one-favorites', oneCoursesFavorites.oneCoursesFavorites);
 
 
+// Endpoint funcionando
 //loginControllers contiene login y getUserFavorites
-//hacer login
+//hace login y verifica los datos del login
 /**
  * @swagger
  * /creanunate/login/login:
@@ -162,6 +211,9 @@ router.post('/creanunate/courses/one-favorites', oneCoursesFavorites.oneCoursesF
  */
 router.post('/creanunate/login/login', loginControllers.login);
 
+
+// Endpoint funcionando
+// Envia los cursos favoritos de cada cliente a su área cliente
 /**
  * @swagger
  * /creanunate/login/login:
@@ -224,6 +276,7 @@ router.post('/creanunate/login/login', loginControllers.login);
  */
 router.post('/creanunate/login/login', loginControllers.login);
 //Ver los cursos en favoritos dentro del área cliente
+
 
 /// Endpoint para la verión 2
 //router.get('/creanunate/courses/get-user-favorites', loginControllers.getUserFavorites);
