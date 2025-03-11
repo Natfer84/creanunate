@@ -1,11 +1,19 @@
 import { useState, useEffect } from "react";
 
+//jsdoc src/utils/useNextCourses.js -d out   
+
+/**
+ * Hook personalizado para obtener los próximos cursos.
+ * @returns {Array} Lista de cursos obtenida desde la API.
+ */
 export default function useNextCourses() {
 
     const [nextCourses, setNextCourses] = useState([]);
 
     useEffect(() => {
-
+        /**
+         * Obtiene los próximos cursos de la API.
+         */
         const fetchNextCourses = async () => {
 
             try {

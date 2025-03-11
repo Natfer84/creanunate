@@ -5,6 +5,7 @@ import Logout from "./Logout";
 import { useState } from "react";
 import "../styles/CoursesFavorites.css";
 
+// Área del cliente logado
 
 export default function CustomerArea(){
   

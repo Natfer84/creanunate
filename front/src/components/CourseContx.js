@@ -1,9 +1,10 @@
 import Heart from "./Heart.js";
 import { useCourses } from "../context/CoursesContext.js"; // Importamos el contexto
 import NextCourses from "./NextCourses.js";
-
-
 import "../styles/Course.css";
+
+
+// Realizado un contexto que permite acceder a los datos de Courses
 
 export default function CoursesContx() {
   const { courses, loading, error } = useCourses();

@@ -1,0 +1,40 @@
+.Container__text_p{
+color: white;
+margin: 0px;
+padding: 20px;
+}
+.Container__text{
+    position: relative;
+}
+.text{
+    background-color: rgba(166, 149, 89, 0.856);
+    width: 200px;
+    max-width: 100%;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.Container__text_1{
+    position: absolute;
+    top: 184px;
+    left: 87px;
+    width: 300px;
+    line-height: 2;
+}.Container__text_2{
+    position: absolute;
+    top: 382px;
+    left: 296px;
+    width: 244px;
+}
+.Container__text_3{
+    position: absolute;
+    top: 570px;
+    left: 102px;
+    width: 438px;
+    line-height: 1.5;
+}
+.Container__text_4{
+    position: absolute;
+    top: 833px;
+    left: 206px;
+    width: 124px;
+}
