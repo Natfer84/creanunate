@@ -58,6 +58,7 @@ export default function CoursesContx() {
                 <Heart />
               </div>
             </div>
+            
           </div>
         ))}
       </div>

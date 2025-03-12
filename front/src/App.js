@@ -10,6 +10,17 @@ import Login from "../src/components/Login.js";
 import CustomerArea from "./components/CustomerArea.js";
 
 /**
+ * @author Natalia
+ * @email natalia@gmail.com
+ * @version 1.0
+ * @since 2025-03-12
+ * @copyright creanunate
+ * History
+ * v1.0 -Se creo inicio con acceso a cursos segun el tipo.Cursos con el contenido de todos los cursos y login con acceso a cursos favoritos.
+ * 
+ */
+
+/**
  * Componente principal de la aplicación.
  *
  * - Configura las rutas con `react-router-dom`.
