@@ -1,3 +1,4 @@
+/* Contenedor del botón de cierre de sesión */
 .Box__LogOut{
     padding: 10px;
     border-radius: 1px solid grey;
@@ -14,7 +15,7 @@
     border-radius: 10px;
     box-shadow: inset 0px 0px 4px 0px rgb(77, 77, 77);
 }
-
+/* Texto dentro del botón de cierre de sesión */
 .Box__LogOut__div{
     color: rgb(61, 61, 61)
 }

@@ -1,15 +1,32 @@
 import React, { useState } from "react";
 
-export default function Count () {
-    const [count, setCount] = useState(0);
-    
-    return(
-        <div>
-            <p>contador {count}</p>
-            <button onClick={()=> setCount (count +1)}>
-                </button>
-        </div>
-    );
+/**
+ * Componente de contador simple.
+ *
+ * - Usa el hook `useState` para manejar el estado del contador.
+ * - Muestra el valor actual del contador en un `<p>`.
+ * - Tiene un botón que incrementa el contador en `1` cada vez que se presiona.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa un contador con botón de incremento.
+ */
+
+export default function Count() {
+  /**
+   * Estado que almacena el valor del contador.
+   * @type {[number, Function]}
+   */
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      {/* Muestra el valor actual del contador */}
+      <p>contador {count}</p>
+
+      {/* Botón que incrementa el contador al hacer clic */}
+      <button onClick={() => setCount(count + 1)}></button>
+    </div>
+  );
 }
 
 /*

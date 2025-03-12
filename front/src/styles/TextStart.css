@@ -1,11 +1,14 @@
+/* Estilos para los párrafos dentro de los contenedores de texto */
 .Container__text_p{
 color: white;
 margin: 0px;
 padding: 20px;
 }
+/* Contenedor principal de los textos */
 .Container__text{
     position: relative;
 }
+/* Estilos generales para los bloques de texto */
 .text{
     background-color: rgba(166, 149, 89, 0.856);
     width: 200px;
@@ -13,6 +16,7 @@ padding: 20px;
     border-radius: 10px;
     font-size: 20px;
 }
+/* Posicionamiento absoluto de cada bloque de texto */
 .Container__text_1{
     position: absolute;
     top: 184px;

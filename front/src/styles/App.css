@@ -1,3 +1,4 @@
+/* Aplica box-sizing a todos los elementos, pseudoelementos ::after y ::before */
 body,
 ::after,
 ::before{
@@ -7,3 +8,4 @@ body,
  font-weight: weight;
  font-style: normal;
 };
+/* Configuración de la fuente Montserrat */

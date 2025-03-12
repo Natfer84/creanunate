@@ -2,10 +2,25 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 
+/**
+ * Componente de inicio de sesión.
+ *
+ * - Permite a los usuarios ingresar su nombre de usuario y contraseña.
+ * - Envía los datos al backend para autenticación.
+ * - Maneja diferentes estados según el resultado del login.
+ * - Al iniciar sesión correctamente, guarda el token y los datos del usuario en `localStorage`
+ *   y redirige a la página de `CustomerArea`.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa el formulario de login.
+ */
+
 export default function Login() {
+  // Estados para almacenar las credenciales del usuario
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  //para mostrar login ok o error al hacer login
+
+  // Estados para manejar mensajes de error o éxito en el login
   const [errorMessage, setErrorMessage] = useState("");
   const [loginOk, setLoginOk] = useState("");
   const [unknownError, setUnknowError] = useState("");
@@ -15,6 +30,17 @@ export default function Login() {
   console.log(username);
   console.log(password);
 
+  /**
+   * Maneja el proceso de inicio de sesión.
+   *
+   * - Valida que los campos no estén vacíos.
+   * - Envía una solicitud `POST` al backend con las credenciales del usuario.
+   * - Guarda el token de autenticación y otros datos en `localStorage` si el login es exitoso.
+   * - Redirige al usuario a la página `CustomerArea` tras un login exitoso.
+   *
+   * @param {Event} e - Evento del formulario.
+   */
+
   // Hacemo click y nos lleva a los posibles estados del login
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,7 +48,7 @@ export default function Login() {
     setLoginOk("");
     setUnknowError("");
 
-    // Comprobamos si faltan datos en login
+    // Validación: comprobar si los campos están vacíos
     if (!username || !password) {
       setErrorMessage("El campo usuario y/o contraseña, no puede estar vacío");
       return; // Detener la ejecución si los campos están vacíos.
@@ -32,8 +58,9 @@ export default function Login() {
       username: username,
       password: password,
     };
-    
+
     try {
+      // Petición al backend para verificar las credenciales
       const response = await fetch(
         "http://localhost:3001/creanunate/login/login",
         {
@@ -51,26 +78,26 @@ export default function Login() {
         setLoginOk("¡Login exitoso! Bienvenida/o.");
 
         // TOKEN
-
+        // Si el login es exitoso, guarda el token y los datos del usuario en localStorage
         if (result.token) {
-          localStorage.setItem("token", result.token); // se guarda el token en localStore
+          localStorage.setItem("token", result.token);
           console.log("token del front: ", result.token);
         }
         console.log("Token JWT:", localStorage.getItem("token"));
 
-        localStorage.setItem("username", result.user.username); // Guardamos username
-        localStorage.setItem("userId", result.user.id); // Guardamos userId
-        // Si login ok, nos redirige a CustomArea
+        localStorage.setItem("username", result.user.username); // Guarda el nombre de usuario
+        localStorage.setItem("userId", result.user.id); /// Guarda el ID del usuario
+        // Redirige a la página de CustomerArea tras el login exitoso
         navigate("/CustomerArea");
       }
-
+      // Maneja el caso en el que el usuario no existe
       if (result.error === "El usuario no existe") {
         setErrorMessage("El usuario no existe");
         return;
       }
     } catch {
       console.error("Error en el login:");
-      //capturas el error en el estado setErrorMessage
+      // Captura errores desconocidos y los muestra al usuario
       setUnknowError("Ha ocurrido un error desconocido.");
     }
   };
@@ -79,8 +106,8 @@ export default function Login() {
     <div>
       <div className="Login__container">
         <form className="Login__Form">
+          {/* Campo de usuario */}
           <label className="Login__Label">Usuario</label>
-
           <input
             onChange={(event) => {
               setUsername(event.target.value);
@@ -90,6 +117,7 @@ export default function Login() {
             className="Login__Input"
           />
 
+          {/* Campo de contraseña */}
           <label className="Login__Label">Contraseña</label>
           <input
             onChange={(event) => {
@@ -99,10 +127,13 @@ export default function Login() {
             type="password"
             className="Login__Input"
           />
+
+          {/* Mensajes de error o éxito */}
           {errorMessage && <p className="Login__Error">{errorMessage}</p>}
           {loginOk && <p className="Login__Success">{loginOk}</p>}
           {unknownError && <p className="Login__Success">{unknownError}</p>}
 
+          {/* Botón para iniciar sesión */}
           <button onClick={handleLogin} className="Login__button">
             Acceder
           </button>

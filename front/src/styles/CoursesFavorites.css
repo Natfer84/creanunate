@@ -1,7 +1,9 @@
+/* Contenedor principal de la sección de cursos favoritos */
 .Courses_container_Favorites{
     color: rgb(57, 56, 56);
     height: 1300px;
 }
+/* Contenedor que organiza las tarjetas de cursos favoritos */
 .Box__favorites{
     display: flex;
     flex-direction: row;
@@ -12,19 +14,22 @@
     width: 900px;
     margin: 50px auto 80px;
 }
+/* Contenedor del título y subtítulo */
 .Box__favorites__h1_h2{
     margin-left: 30px;
     margin-top: 70px;    
 }
+/* Estilo del subtítulo (h2) dentro del contenedor */
 .Box__favorites__h1_h2 h2{
     cursor: pointer;  
     display: inline;
     border-bottom: 1px solid #525050;
 }
-
+/* Efecto hover en el subtítulo */
 .Box__favorites__h1_h2 h2:hover{
     font-size: 2em;
 }
+/* Tarjetas de cursos favoritos */
 .Box__favorites__div{
     width: 300px;
     padding: 20px;
@@ -33,6 +38,7 @@
     box-shadow:  0px 1px 8px #9f9c9c;
     position: relative;
 }
+/* Contenedor del precio y el icono de favoritos */
 .Box__favorites__Price_Heart{
     display: flex;
     flex-direction: row;

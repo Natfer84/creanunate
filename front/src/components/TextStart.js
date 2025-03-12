@@ -1,9 +1,25 @@
 import React from "react";
 import "../styles/TextStart.css";
 
-export default function TextStart () {
+/**
+ * Componente funcional que muestra un texto sobre creatividad.
+ * Al hacer clic en la palabra "creatividad", se realiza una llamada a un endpoint en el backend
+ * que ejecuta una configuración de Selenium.
+ * 
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa el texto interactivo.
+ */
 
-// Al hacer click en la parabla creatividad, llamamos al Backen mediante endpoint y carga la configuración de Selenium. 
+export default function TextStart () {
+    /**
+     * Maneja el evento de clic en la palabra "creatividad".
+     * Envía una solicitud al backend para ejecutar Selenium.
+     * 
+     * @async
+     * @function handleClick
+     */
+
+
     const handleClick = async () => {
         try {
             const response = await fetch("http://localhost:3001/run-selenium");

@@ -1,8 +1,11 @@
+/* Aplica box-sizing a todos los elementos y sus pseudoelementos (::after y ::before) */
+/* Esto asegura que el padding y border estén incluidos en el tamaño total del elemento */
 *,
 ::after,
 ::before{
  box-sizing: border-box;
 }
+/* Estilos para el contenedor del header */
 .Header_box{
  background-color: black;
  display: flex;

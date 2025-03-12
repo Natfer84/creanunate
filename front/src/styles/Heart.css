@@ -1,4 +1,4 @@
-
+/* Estilos para el icono de corazón */
 .Heart__favorites{
     width: 17px;
     height: 17px;
@@ -8,7 +8,7 @@
     cursor: pointer;
 
 }
-
+/* Parte superior izquierda del corazón (círculo) */
 .Heart__favorites::before{
     content:'';
     position: absolute;
@@ -19,8 +19,8 @@
     background-color:  rgb(218, 218, 218);
     border-radius: 50%;
     cursor: pointer;
- 
 }
+/* Parte superior derecha del corazón (círculo) */
 .Heart__favorites::after{
     content:'';
     position: absolute;

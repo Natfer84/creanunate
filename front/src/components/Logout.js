@@ -1,21 +1,41 @@
 import { useNavigate } from "react-router-dom";
-import "../styles/Logout.css"
+import "../styles/Logout.css";
 
-// Cerrar sesión en área cliente.
+/**
+ * Componente que maneja el cierre de sesión del usuario.
+ *
+ * - Elimina los datos del usuario almacenados en `localStorage`.
+ * - Redirige al usuario a la página de inicio (`"/"`).
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa el botón de cierre de sesión.
+ */
+
 const Logout = () => {
   const navigate = useNavigate();
 
+  /**
+   * Maneja el cierre de sesión.
+   *
+   * - Elimina el token de autenticación y los datos del usuario del `localStorage`.
+   * - Redirige al usuario a la página de inicio (`"/"`).
+   *
+   * @function handleLogout
+   */
+
   const handleLogout = () => {
-    // Borra el token, el nombre y el id.
-    localStorage.removeItem("token");       
+    localStorage.removeItem("token");
     localStorage.removeItem("username");
     localStorage.removeItem("userId");
-    navigate("/"); 
+    navigate("/");
   };
 
   return (
     <div className="Box__LogOut">
-      <div onClick={handleLogout} className="Box__LogOut__div">Cerrar sesión</div>
+      {/* Al hacer clic, se ejecuta la función handleLogout para cerrar sesión */}
+      <div onClick={handleLogout} className="Box__LogOut__div">
+        Cerrar sesión
+      </div>
     </div>
   );
 };

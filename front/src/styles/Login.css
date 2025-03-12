@@ -1,9 +1,11 @@
+/* Contenedor principal del formulario de inicio de sesión */
 .Login__container{
     margin: 0px auto;
     background-color: rgb(215, 140, 140);
     padding: 100px;
     height: 1579px;
 }
+/* Estilos para el formulario */
 .Login__Form{
     display: flex;
     flex-direction: column;
@@ -19,16 +21,19 @@
     border-radius: 30px;
     margin: 30px auto;
 }
+/* Estilos para los campos de entrada */
 .Login__Input{
     padding: 20px;
     border-radius: 10px;
     cursor: pointer;
 }
+/* Botón de inicio de sesión */
 .Login__button{
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
 }
+/* Estilos para mensajes de error y éxito */
 .Login__Error,
 .Login__Success {
     color: red;

@@ -1,4 +1,4 @@
-
+/* Contenedor principal de la barra de navegación */
 .Box__nav {
     display: flex;
     flex-direction: row;
@@ -8,6 +8,7 @@
     color: white;
     max-width: 100%;
 }
+/* Estilos para los enlaces dentro de la navegación */
 .Box__nav a{
     color: white;
     text-decoration: none;
@@ -15,6 +16,7 @@
 .Box__nav li :hover{
     border-bottom: 1px solid white;
 }
+/* Contenedor de la lista de navegación */
 .Box__Nav__Ul {
     display: flex;
     flex-direction: row;
@@ -25,11 +27,11 @@
     gap: 40px;
     padding: 0px;
   }
-
+/* Efecto hover en los elementos de la lista */
 .Box__Nav__Li:hover{
     border-bottom: 1px solid white;
 }
-
+/* Estilos para el icono/carrito de compras en la navegación */
 .Box__Nav__img__car {
     height: 30px;
     width: 30px;
