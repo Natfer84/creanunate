@@ -41,7 +41,6 @@ export default function CustomerArea() {
         {/* Botón para alternar la visibilidad de los favoritos */}
         <h2
           onClick={() => {
-            console.log("Click en Mis Cursos Favoritos");
             setShowFavorites(!showFavorites);
           }}
         >

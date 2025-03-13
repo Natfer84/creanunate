@@ -27,9 +27,6 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  console.log(username);
-  console.log(password);
-
   /**
    * Maneja el proceso de inicio de sesión.
    *
@@ -73,7 +70,7 @@ export default function Login() {
       );
 
       const result = await response.json();
-      console.log("Respuesta del backend:", result);
+
       if (result.message === "Login exitoso") {
         setLoginOk("¡Login exitoso! Bienvenida/o.");
 
@@ -81,9 +78,7 @@ export default function Login() {
         // Si el login es exitoso, guarda el token y los datos del usuario en localStorage
         if (result.token) {
           localStorage.setItem("token", result.token);
-          console.log("token del front: ", result.token);
         }
-        console.log("Token JWT:", localStorage.getItem("token"));
 
         localStorage.setItem("username", result.user.username); // Guarda el nombre de usuario
         localStorage.setItem("userId", result.user.id); /// Guarda el ID del usuario
@@ -96,7 +91,6 @@ export default function Login() {
         return;
       }
     } catch {
-      console.error("Error en el login:");
       // Captura errores desconocidos y los muestra al usuario
       setUnknowError("Ha ocurrido un error desconocido.");
     }

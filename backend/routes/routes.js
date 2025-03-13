@@ -1,10 +1,10 @@
-import { Router } from 'express';
-import courses from '../controllers/courses.controllers.js';
-import nextCourses from '../controllers/courses.controllers.js';
+import { Router } from "express";
+import courses from "../controllers/courses.controllers.js";
+import nextCourses from "../controllers/courses.controllers.js";
 //import getUserFavorites from "../controllers/login.controllers.js";
-import oneCoursesFavorites from "../controllers/courses.controllers.js"
-import coursesTypeStart from "../controllers/courses.controllers.js"
-import loginControllers from '../controllers/login.controllers.js';
+import oneCoursesFavorites from "../controllers/courses.controllers.js";
+import coursesTypeStart from "../controllers/courses.controllers.js";
+import loginControllers from "../controllers/login.controllers.js";
 //import coursesOne from '../controllers/courses.controllers.js'
 
 const router = Router();
@@ -49,8 +49,7 @@ const router = Router();
  *       500:
  *         description: Error interno del servidor.
  */
-router.get('/creanunate/courses/all-courses', courses.allCourses);
-
+router.get("/creanunate/courses/all-courses", courses.allCourses);
 
 // Endpoint funcionando
 // NextCourses
@@ -90,12 +89,11 @@ router.get('/creanunate/courses/all-courses', courses.allCourses);
  *       500:
  *         description: Error interno del servidor.
  */
-router.get('/creanunate/nextCourses/next-courses', nextCourses.nextCourses);
+router.get("/creanunate/nextCourses/next-courses", nextCourses.nextCourses);
 
 /// Endpoint para la verión 2
 //obtener un curso para llevarlo a mysql favoritos
 //router.post('/creanunate/coursesOne/get-One', coursesOne.getOne)
-
 
 // Endpoint funcionando
 // Start
@@ -105,7 +103,7 @@ router.get('/creanunate/nextCourses/next-courses', nextCourses.nextCourses);
  * /creanunate/courses/{type}:
  *   get:
  *     summary: Obtiene todos los cursos de un tipo específico
- *     tags: 
+ *     tags:
  *       - Cursos
  *     parameters:
  *       - in: path
@@ -146,16 +144,16 @@ router.get('/creanunate/nextCourses/next-courses', nextCourses.nextCourses);
  *       500:
  *         description: Error interno del servidor.
  */
-router.get('/creanunate/courses/:type', coursesTypeStart.allCoursesTypeStart);
-
-
+router.get("/creanunate/courses/:type", coursesTypeStart.allCoursesTypeStart);
 
 // MySQL
 
 /// Endpoint para la verión 2
 // Enviar un curso a favoritos mediante id
-router.post('/creanunate/courses/one-favorites', oneCoursesFavorites.oneCoursesFavorites);
-
+router.post(
+  "/creanunate/courses/one-favorites",
+  oneCoursesFavorites.oneCoursesFavorites
+);
 
 // Endpoint funcionando
 //loginControllers contiene login y getUserFavorites
@@ -209,8 +207,7 @@ router.post('/creanunate/courses/one-favorites', oneCoursesFavorites.oneCoursesF
  *       500:
  *         description: Error interno del servidor.
  */
-router.post('/creanunate/login/login', loginControllers.login);
-
+router.post("/creanunate/login/login", loginControllers.login);
 
 // Endpoint funcionando
 // Envia los cursos favoritos de cada cliente a su área cliente
@@ -274,12 +271,11 @@ router.post('/creanunate/login/login', loginControllers.login);
  *       500:
  *         description: Error interno del servidor.
  */
-router.post('/creanunate/login/login', loginControllers.login);
+router.post("/creanunate/login/login", loginControllers.login);
 //Ver los cursos en favoritos dentro del área cliente
-
 
 /// Endpoint para la verión 2
 //router.get('/creanunate/courses/get-user-favorites', loginControllers.getUserFavorites);
-router.get('/favorites',loginControllers.getUserFavorites);
+router.get("/favorites", loginControllers.getUserFavorites);
 
 export { router };

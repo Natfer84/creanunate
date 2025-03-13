@@ -11,26 +11,19 @@ const port = process.env.PORT || 5000;
 // Endpoint para ejecutar Swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-
 // Endpoint para ejecutar Selenium
 app.get("/run-selenium", (req, res) => {
-    console.log("Ejecutando Selenium...");
-    // Ejecuta el script de selenium
-    exec("node selenium/selenium.js", (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error: ${error.message}`);
-            return res.status(500).json({ error: error.message });
-        }
-        if (stderr) {
-            console.error(`STDERR: ${stderr}`);
-            return res.status(500).json({ error: stderr });
-        }
+  // Ejecuta el script de selenium
+  exec("node selenium/selenium.js", (error, stdout, stderr) => {
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+    if (stderr) {
+      return res.status(500).json({ error: stderr });
+    }
 
-        console.log(`Salida: ${stdout}`);
-        res.json({ message: "Selenium ejecutado correctamente", output: stdout });
-    });
+    res.json({ message: "Selenium ejecutado correctamente", output: stdout });
+  });
 });
 
-
-
-app.listen(port, () => console.log(`Server running on port ${port}`))
+app.listen(port, () => console.log(`Server running on port ${port}`));

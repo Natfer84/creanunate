@@ -27,7 +27,6 @@ export default function NextCourses() {
    */
 
   const nextCourse = useNextCourses();
-  console.log(nextCourse);
 
   /**
    * Maneja el evento de clic en el título "PRÓXIMOS CURSOS".

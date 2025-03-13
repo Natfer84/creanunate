@@ -26,7 +26,7 @@ export default function TextStart () {
             const data = await response.json();
             console.log(data.message);
         } catch (error) {
-            console.error("Error al ejecutar Selenium:", error);
+            
         }
     };
 
