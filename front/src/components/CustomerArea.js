@@ -30,7 +30,7 @@ export default function CustomerArea() {
    *
    * @type {[boolean, Function]}
    */
-  const [showFavorites, setShowFavorites] = useState(true); // aquí verdadero para mostrarlos
+  const [showFavorites, setShowFavorites] = useState(false); // aquí verdadero para mostrarlos
 
   return (
     <div className="Courses_container_Favorites">
