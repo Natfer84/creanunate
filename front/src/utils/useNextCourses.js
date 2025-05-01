@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 /**
  * Hook personalizado para obtener los próximos cursos.
  * @returns {Array} Lista de cursos obtenida desde la API.
+ * REACT_APP_API_URL = URL A RAILWAY
  */
 export default function useNextCourses() {
 
@@ -18,7 +19,7 @@ export default function useNextCourses() {
 
             try {
                 const response = await fetch(
-                    "http://localhost:3001/creanunate/nextCourses/next-courses"
+                    "http://REACT_APP_API_URL/creanunate/nextCourses/next-courses" // "http://localhost:3001/creanunate/nextCourses/next-courses"
                 );
                 if (response.ok) {
                     const data = await response.json();

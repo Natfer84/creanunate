@@ -25,12 +25,13 @@ export default function useCourses () {
      * @async
      * @function fetchCourses
      * @throws {Error} Si la petición al backend falla.
+     * * REACT_APP_API_URL = URL A RAILWAY
      */
          const fetchCourses = async () => {
   
     try {
       const response = await fetch(
-        "http://localhost:3001/creanunate/courses/all-courses"
+       "http://REACT_APP_API_URL/creanunate/courses/all-courses"  //"http://localhost:3001/creanunate/courses/all-courses"
       );
       if (response.ok) {
         const data = await response.json();

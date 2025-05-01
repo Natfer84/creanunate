@@ -29,12 +29,13 @@ export default function useAllCoursesTypeStart(type) {
        * @async
        * @function fetchCourses
        * @throws {Error} Si la petición al backend falla.
+       * REACT_APP_API_URL = URL A RAILWAY
        */
       const fetchCourses = async () => {
-        console.log("Tipo seleccionado:", `http://localhost:3001/creanunate/courses/${type}` );
+        console.log("Tipo seleccionado:", `http://REACT_APP_API_URL/creanunate/courses/${type}` );  //`http://localhost:3001/creanunate/courses/${type}`
         try {
           const response = await fetch(
-            `http://localhost:3001/creanunate/courses/${type}` 
+            `http://REACT_APP_API_URL/creanunate/courses/${type}`  //`http://localhost:3001/creanunate/courses/${type}`
             // // type = donde pinchas en inicio
             
           );
