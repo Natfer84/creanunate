@@ -1,4 +1,9 @@
 {
+  "name": "creanunate",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd creanunate/front && npm install && npm run build && cd ../backend && npm install && npm start"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
