@@ -41,12 +41,12 @@ export default function useCustomerArea() {
          * @async
          * @function getUserFavorites
          * @throws {Error} Si la petición al backend falla.
-         * REACT_APP_API_URL = URL A RAILWAY
+         * REACT_APP_API_URL = URL AL BACKEND DE RAILWAY
          */
 
       const getUserFavorites = async () => {
         try {
-          const url = `http://localhost:3001/favorites?username=${encodeURIComponent(username)}`; 
+          const url = `http://REACT_APP_API_URL/favorites?username=${encodeURIComponent(username)}`; //HE CAMBIADO LOCALHOST A REACT_APP_API_URL
       
           console.log("URL de la petición:", url);
 

@@ -59,7 +59,7 @@ export default function Login() {
     try {
       // Petición al backend para verificar las credenciales
       const response = await fetch(
-        "http://localhost:3001/creanunate/login/login",
+        "http://REACT_APP_API_URL/login/login",  //'http://localhost/creanunate/loginligin'
         {
           method: "POST",
           headers: {
