@@ -207,7 +207,7 @@ router.post(
  *       500:
  *         description: Error interno del servidor.
  */
-router.post("/creanunate/login/login", loginControllers.login);
+router.post("/creanunate/login/login", loginControllers.login); ///creanunate/login/login
 
 // Endpoint funcionando
 // Envia los cursos favoritos de cada cliente a su área cliente
@@ -271,7 +271,7 @@ router.post("/creanunate/login/login", loginControllers.login);
  *       500:
  *         description: Error interno del servidor.
  */
-router.post("/creanunate/login/login", loginControllers.login);
+router.post("/creanunate/login", loginControllers.login);
 //Ver los cursos en favoritos dentro del área cliente
 
 /// Endpoint para la verión 2
