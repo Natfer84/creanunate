@@ -46,7 +46,7 @@ export default function useCustomerArea() {
 
       const getUserFavorites = async () => {
         try {
-          const url = `https://REACT_APP_API_URL/favorites?username=${encodeURIComponent(username)}`; //HE CAMBIADO LOCALHOST A REACT_APP_API_URL
+          const url = `${process.env.REACT_APP_API_URL}/favorites?username=${encodeURIComponent(username)}`; //HE CAMBIADO LOCALHOST A REACT_APP_API_URL
       
           console.log("URL de la petición:", url);
 
