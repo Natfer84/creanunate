@@ -46,7 +46,8 @@ export default function useCustomerArea() {
 
       const getUserFavorites = async () => {
         try {
-          const url = `http://MONGO_URL/favorites?username=${encodeURIComponent(username)}`; //http://localhost:3001/favorites?username=${encodeURIComponent(username)}
+          const url = `http://localhost:3001/favorites?username=${encodeURIComponent(username)}`; 
+      
           console.log("URL de la petición:", url);
 
           const response = await fetch(url);

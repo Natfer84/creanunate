@@ -49,8 +49,7 @@ export const CoursesProvider = ({ children }) => {
     const fetchCourses = async () => {
       try {
         const response = await fetch(
-          "http://URI_MONGOLOCAL/creanunate/courses/all-courses" 
-          // "http://localhost:3001/creanunate/courses/all-courses"
+          "http://localhost:3001/creanunate/courses/all-courses"
         );
         if (!response.ok) {
           throw new Error(

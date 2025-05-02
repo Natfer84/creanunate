@@ -19,7 +19,8 @@ export default function useNextCourses() {
 
             try {
                 const response = await fetch(
-                    "http://MONGO_URL/creanunate/nextCourses/next-courses" // "http://localhost:3001/creanunate/nextCourses/next-courses"
+                    //"http://MONGO_URL/creanunate/nextCourses/next-courses" 
+                     "http://localhost:3001/creanunate/nextCourses/next-courses"
                 );
                 if (response.ok) {
                     const data = await response.json();
