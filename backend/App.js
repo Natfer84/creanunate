@@ -10,6 +10,8 @@ app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use(cors());
 
+
+app.use(router);
 // Aquí configuro para que el backen sirva al front con la misma url que me da Railway, si no funciona, borrar.
 
 // Necesario para usar __dirname con ES Modules
@@ -22,8 +24,8 @@ app.use(express.static(path.join(__dirname, "../frontend/build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
 });
+//-----------------------------------------------------------------------------------------------------
 
-app.use(router);
 
 export default app;
 
