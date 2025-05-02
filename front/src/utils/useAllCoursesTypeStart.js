@@ -32,10 +32,10 @@ export default function useAllCoursesTypeStart(type) {
        * REACT_APP_API_URL = URL A RAILWAY
        */
       const fetchCourses = async () => {
-        console.log("Tipo seleccionado:", `http://REACT_APP_API_URL/creanunate/courses/${type}` );  //`http://localhost:3001/creanunate/courses/${type}`
+        console.log("Tipo seleccionado:", `http://MONGO_URL/creanunate/courses/${type}` );  //`http://localhost:3001/creanunate/courses/${type}`
         try {
           const response = await fetch(
-            `http://REACT_APP_API_URL/creanunate/courses/${type}`  //`http://localhost:3001/creanunate/courses/${type}`
+            `http://MONGO_URL/creanunate/courses/${type}`  //`http://localhost:3001/creanunate/courses/${type}`
             // // type = donde pinchas en inicio
             
           );
