@@ -59,7 +59,7 @@ export default function Login() {
     try {
       // Petición al backend para verificar las credenciales
       const response = await fetch(
-        `https://creanunate-production.up.railway.app/creanunate/login/login`,  //'http://localhost/creanunate/login/login'
+        `https://creanunate-production.up.railway.app/login/login`,  //'http://localhost/creanunate/login/login'
         {
           method: "POST",
           headers: {
