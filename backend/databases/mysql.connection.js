@@ -14,6 +14,7 @@ export default {
 			user: process.env.SQL_USER,
 			password: process.env.SQL_PASS,
 			database: process.env.SQL_BBDD,
+			port: process.env.SQL_PORT,
 			waitForConnections: true,
 			connectionLimit: 20,
 			queueLimit: 0
