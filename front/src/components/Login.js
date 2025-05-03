@@ -68,18 +68,7 @@ export default function Login() {
           body: JSON.stringify(data),
         }
       );
-        try {
-      // Petición al backend para verificar las credenciales
-      const response = await fetch(
-        `https://creanunate-production.up.railway.app/creanunate/login/login`,  //'http://localhost/creanunate/login/login'
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+ 
 
       console.log('Response Status:', response.status); // Muestra el código de estado
     console.log('Response Headers:', response.headers); // Muestra las cabeceras de la respuesta
