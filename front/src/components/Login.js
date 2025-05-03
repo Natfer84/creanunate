@@ -74,6 +74,7 @@ export default function Login() {
     console.log('Response Headers:', response.headers); // Muestra las cabeceras de la respuesta
 
       const result = await response.json();
+      console.log('Response Body:', result);
 
       if (result.message === "Login exitoso") {
         setLoginOk("¡Login exitoso! Bienvenida/o.");
