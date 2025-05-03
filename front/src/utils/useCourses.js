@@ -31,7 +31,7 @@ export default function useCourses () {
   
     try {
       const response = await fetch(
-      "http://localhost:3001/creanunate/courses/all-courses"
+      "http://mongodb+srv://natita2804:falsa123@cluster0.84isb6x.mongodb.net/creanunate/courses/all-courses"
       );
       if (response.ok) {
         const data = await response.json();

@@ -59,7 +59,7 @@ export default function Login() {
     try {
       // Petición al backend para verificar las credenciales
       const response = await fetch(
-        `https://creanunate-production.up.railway.app/login`,  //'http://localhost/creanunate/login/login'
+        `https://creanunate-production.up.railway.app/creanunate/login/login`,  //'http://localhost/creanunate/login/login'
         {
           method: "POST",
           headers: {
@@ -74,7 +74,7 @@ export default function Login() {
     console.log('Response Headers:', response.headers); // Muestra las cabeceras de la respuesta
 
       const result = await response.json();
-      console.log('Response Body:', result);
+       console.log('Response Body:', result);
 
       if (result.message === "Login exitoso") {
         setLoginOk("¡Login exitoso! Bienvenida/o.");
