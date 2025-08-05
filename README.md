@@ -36,5 +36,33 @@ Se trata de una **tienda de creatividad** donde los usuarios pueden explorar y c
 - La funcionalidad de **registro/logueo** será incorporada en versiones futuras.
 
 ---
+__🚧 Estado actual__  
+
+__🚧 En construcción__
+Actualmente se están desarrollando funcionalidades clave como autenticación de usuarios, panel de administración y mejora de la experiencia del cliente.
+---
+__🧠 Objetivo educativo__  
+
+Este proyecto integra conocimientos y habilidades adquiridos a lo largo del curso, incluyendo:
+
+Desarrollo frontend moderno con React.
+
+Gestión de datos con bases de datos relacionales y no relacionales.
+
+Testing de interfaces y componentes.
+
+Organización modular de una aplicación MERN completa.
+---
+__📌 Próximas mejoras (v2)__  
+
+Registro e inicio de sesión de usuarios.
+
+Edición de perfil del cliente.
+
+Pasarela de pago para compras reales.
+
+Sistema de puntuación y comentarios para cursos.
+
+Panel de administrador.
 
 
