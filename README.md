@@ -37,21 +37,4 @@ Se trata de una **tienda de creatividad** donde los usuarios pueden explorar y c
 
 ---
 
-## 📁 Estructura general del proyecto
 
-```plaintext
-📦 tienda-creatividad/
-├── client/               ← Frontend en React
-│   ├── public/
-│   └── src/
-│       ├── components/
-│       ├── pages/
-│       └── App.js
-├── server/               ← Backend con Express y conexiones a DB
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   └── app.js
-├── tests/                ← Pruebas con Jest y Selenium
-├── README.md
-└── package.json
