@@ -95,7 +95,7 @@ export default function Login() {
         setErrorMessage("El usuario no existe");
         return;
       }
-    } catch {
+    } catch (error) {
       // Captura errores desconocidos y los muestra al usuario
       setUnknowError("Ha ocurrido un error desconocido.");
     }
