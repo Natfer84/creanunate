@@ -13,7 +13,7 @@ app.use(cors({
 
 app.use(json());
 app.use(urlencoded({ extended: false }));
-//app.use(cors());
+//app.use(cor
 
 
 app.use(router);
