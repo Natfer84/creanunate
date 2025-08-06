@@ -6,9 +6,8 @@ import { router } from "./routes/routes.js";
 const app = express();
 
 app.use(cors({
-  origin: 'https://frontend-production-9285.up.railway.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true
+  origin: 'https://frontend-production-9285.up.railway.app', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
 app.use(json());
