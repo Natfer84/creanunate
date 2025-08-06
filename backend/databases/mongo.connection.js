@@ -2,7 +2,7 @@ import { MongoClient } from 'mongodb'
 import dotenv from 'dotenv'
 dotenv.config()
 
-const url = process.env.URI_MONGOLOCAL
+const url = process.env.URI_MONGO
 
 export default {
 
