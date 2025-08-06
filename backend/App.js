@@ -6,7 +6,7 @@ import { router } from "./routes/routes.js";
 const app = express();
 
 app.use(cors({
-  origin: 'https://frontend-production-9285.up.railway.app', 
+  origin: '*', 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
