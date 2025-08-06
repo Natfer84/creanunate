@@ -5,14 +5,10 @@ import { router } from "./routes/routes.js";
 
 const app = express();
 
-app.use(cors({
-  origin: '*', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
-}));
-
+app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: false }));
-//app.use(cor
+
 
 
 app.use(router);
