@@ -5,9 +5,15 @@ import { router } from "./routes/routes.js";
 
 const app = express();
 
+app.use(cors({
+  origin: 'https://frontend-production-9285.up.railway.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
+
 app.use(json());
 app.use(urlencoded({ extended: false }));
-app.use(cors());
+//app.use(cors());
 
 
 app.use(router);
