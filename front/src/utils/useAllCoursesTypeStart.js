@@ -32,12 +32,12 @@ export default function useAllCoursesTypeStart(type) {
        * REACT_APP_API_URL = URL A RAILWAY
        */
       const fetchCourses = async () => {
-        console.log("Tipo seleccionado:", `http://localhost:3001/creanunate/courses/${type}` );  
+        console.log("Tipo seleccionado:", `${process.env.REACT_APP_API_URL}/creanunate/courses/${type}` );  
         try {
           const response = await fetch(
-            `http://localhost:3001/creanunate/courses/${type}`
+            `${process.env.REACT_APP_API_URL}/creanunate/courses/${type}` //fetch a la url de AWS
             // // type = donde pinchas en inicio
-            
+            //fetch local:`http://localhost:3001/creanunate/courses/${type}`
           );
           if (response.ok) {
             const data = await response.json();

@@ -20,8 +20,8 @@ export default function useCourses () {
   useEffect(()=> {
     /**
      * Función asíncrona para obtener los cursos desde la API.
-     * Realiza una petición GET a `http://localhost:3001/creanunate/courses/all-courses`.
-     * 
+     * Realiza una petición local GET a `http://localhost:3001/creanunate/courses/all-courses`.
+     * Realiza una peticion AWS GET a ${process.env.REACT_APP_API_URL}/creanunate/courses/all-courses
      * @async
      * @function fetchCourses
      * @throws {Error} Si la petición al backend falla.
@@ -31,7 +31,7 @@ export default function useCourses () {
   
     try {
       const response = await fetch(
-      "http://localhost:3001/creanunate/courses/all-courses"
+    `${process.env.REACT_APP_API_URL}/creanunate/courses/all-courses` // Petición fetch a url de AWS
       );
       if (response.ok) {
         const data = await response.json();

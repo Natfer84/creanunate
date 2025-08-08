@@ -36,8 +36,8 @@ export default function useCustomerArea() {
       }
       /**
          * Función asíncrona para obtener los favoritos del usuario desde la API.
-         * Realiza una petición GET a `http://localhost:3001/favorites` con el `username` como parámetro.
-         * 
+         * Realiza una petición local GET a `http://localhost:3001/favorites` con el `username` como parámetro.
+         * Realiza una petición AWS GET a ${process.env.REACT_APP_API_URL}/favorites con el 'username? como parámetro.
          * @async
          * @function getUserFavorites
          * @throws {Error} Si la petición al backend falla.
