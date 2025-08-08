@@ -29,10 +29,11 @@ export default function useAllCoursesTypeStart(type) {
        * @async
        * @function fetchCourses
        * @throws {Error} Si la petición al backend falla.
-       * REACT_APP_API_URL = URL A RAILWAY
+       * 
        */
       const fetchCourses = async () => {
-        console.log("Tipo seleccionado:", `${process.env.REACT_APP_API_URL}/creanunate/courses/${type}` );  
+        console.log("Tipo seleccionado:", `${process.env.REACT_APP_API_URL}/creanunate/courses/${type}` ); 
+        console.log(`${process.env.REACT_APP_API_URL}`);
         try {
           const response = await fetch(
             `${process.env.REACT_APP_API_URL}/creanunate/courses/${type}` //fetch a la url de AWS
